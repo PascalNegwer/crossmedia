@@ -12,7 +12,7 @@ var clean = require('gulp-clean'),
     uglify = require('gulp-uglify'),
 
     src = './src',
-    dest = '.';
+    dest = './docs';
 
 gulp.task('default', ['build:js', 'build:html', 'build:css']);
 
