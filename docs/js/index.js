@@ -1,9 +1,3 @@
-var anotherPurpose = function () {
-    console.log('anotherPurpose');
-};
-
-anotherPurpose();
-
 var lineChart = function () {
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
@@ -47,3 +41,15 @@ var lineChart = function () {
 };
 
 lineChart();
+var anotherPurpose = function () {
+    var waypoint = new Waypoint({
+        element: document.getElementById('myChart'),
+        handler: function() {
+            console.log('Basic waypoint triggered')
+        }
+    })
+
+
+};
+
+anotherPurpose();
