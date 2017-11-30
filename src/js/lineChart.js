@@ -1,9 +1,3 @@
-var anotherPurpose = function () {
-    console.log('anotherPurpose');
-};
-
-anotherPurpose();
-
 var lineChart = function () {
     var ctx = document.getElementById("myChart").getContext('2d');
     var myChart = new Chart(ctx, {
