@@ -1,41 +1,28 @@
 {% extends "layouts/default.html" %}
-{% set title = "My static OnePager" %}
+{% set title = "DATASCIENCE" %}
 
 {% block content %}
-
-<div class="section">
-    <h1>Start</h1>
-    <canvas id="myChart"></canvas>
-    <div class="jumbotron">
-        asdf
+    <div id="fullpage">
+        <div class="section">
+            {% include "sections/start.html" %}
+        </div>
+        <div class="section">
+            {% include "sections/facts.html" %}
+        </div>
+        <div class="section">
+            {% include "sections/personalities.html" %}
+        </div>
+        <div class="section">
+            {% include "sections/workExperience.html" %}
+        </div>
+        <div class="section">
+            {% include "sections/stress.html" %}
+        </div>
+        <div class="section">
+            {% include "sections/ending.html" %}
+        </div>
+        <div class="section">
+            {% include "sections/imprint.html" %}
+        </div>
     </div>
-    <div class="jumbotron">
-        asdf
-    </div>
-    <div class="jumbotron">
-        asdf
-    </div>
-    <div class="jumbotron">
-        asdf
-    </div>
-</div>
-<div class="section">
-    <h1>Faktön</h1>
-</div>
-<div class="section">
-    <h1>Persönlichkeitstypen</h1>
-</div>
-<div class="section">
-    <h1>Berufserfahrung</h1>
-</div>
-<div class="section">
-    <h1>Stress</h1>
-</div>
-<div class="section">
-    <h1>Ende</h1>
-</div>
-<div class="section">
-    <h1>Impressum</h1>
-</div>
-
 {% endblock %}
