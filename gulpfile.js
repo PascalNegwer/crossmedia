@@ -44,7 +44,9 @@ gulp.task('clean:js', function () {
 });
 
 gulp.task('clean:assets', function () {
-    return gulp.src(dest + '/assets', {read: false})
+    gulp.src(dest + '/assets/logos', {read: false})
+        .pipe(clean());
+    return gulp.src(dest + '/assets/images', {read: false})
         .pipe(clean());
 });
 
