@@ -65,12 +65,8 @@ var fullpage = function () {
             lazyLoading: true,
 
             //events
-            onLeave: function(index, nextIndex, direction){
-                $('#navbarColor01 > ul').children()[index-1].children[0].style.color = '#929996';
-            },
-            afterLoad: function(anchorLink, index){
-                $('#navbarColor01 > ul').children()[index-1].children[0].style.removeProperty('color');
-            },
+            onLeave: function(index, nextIndex, direction){},
+            afterLoad: function(anchorLink, index){},
             afterRender: function(){},
             afterResize: function(){},
             afterResponsive: function(isResponsive){},
