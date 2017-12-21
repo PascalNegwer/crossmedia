@@ -2,3 +2,11 @@ img#personalities-svg-laptop
   display: block
   height: 200px
   width: 200px
+  transition: width 2s, height 2s
+  transition-timing-function: ease
+  // Safari
+  -webkit-transition: width 2s, height 2s
+  -webkit-transition-timing-function: ease
+  &.focused
+    height: 400px
+    width: 400px
