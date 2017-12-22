@@ -14,7 +14,7 @@ var fullpage = function () {
         //Scrolling
         css3: true,
         scrollingSpeed: 700,
-        autoScrolling: false,
+        autoScrolling: true,
         fitToSection: true,
         fitToSectionDelay: 1000,
         scrollBar: false,
