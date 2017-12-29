@@ -1,4 +1,4 @@
-var hoverEvents = function () {
+function hoverEvents () {
     var svgWomanIsLoaded = false;
     var svgWoman = document.getElementById('svg-stresslevel-woman');
     var svgWomanDoc;
@@ -80,6 +80,4 @@ var hoverEvents = function () {
             console.error(counter.error);
         }
     }
-};
-
-hoverEvents();
+}

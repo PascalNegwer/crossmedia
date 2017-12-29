@@ -46,7 +46,7 @@ var fullpage = function () {
 
         //Design
         controlArrows: true,
-        verticalCentered: false,
+        verticalCentered: true,
         //sectionsColor : ['#7b7b7b'],
         paddingTop: '5em',
         paddingBottom: '10px',
@@ -66,7 +66,9 @@ var fullpage = function () {
         //events
         onLeave: function(index, nextIndex, direction){},
         afterLoad: function(anchorLink, index){},
-        afterRender: function(){},
+        afterRender: function(){
+            hoverEvents();
+        },
         afterResize: function(){},
         afterResponsive: function(isResponsive){},
         afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
@@ -118,7 +120,7 @@ var lineChart = function () {
 };
 
 lineChart();
-var hoverEvents = function () {
+function hoverEvents () {
     var svgWomanIsLoaded = false;
     var svgWoman = document.getElementById('svg-stresslevel-woman');
     var svgWomanDoc;
@@ -200,9 +202,7 @@ var hoverEvents = function () {
             console.error(counter.error);
         }
     }
-};
-
-hoverEvents();
+}
 var piechart = function () {
     google.charts.load("current", {packages:["corechart"]});
     google.charts.setOnLoadCallback(drawCharts);
