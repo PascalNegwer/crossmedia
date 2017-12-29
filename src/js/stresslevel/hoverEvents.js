@@ -1,18 +1,57 @@
-function hoverEvents () {
+var hoverEvents = function() {
+    var svgWomanIsLoaded = false;
     var svgWoman = document.getElementById('svg-stresslevel-woman');
     var svgWomanDoc;
 
+    var svgManIsLoaded = false;
     var svgMan = document.getElementById('svg-stresslevel-man');
     var svgManDoc;
 
-    svgWomanDoc = svgWoman.contentDocument;
-    svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
-    svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
-    svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
-    svgManDoc = svgMan.contentDocument;
-    svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
-    svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
-    svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+    var allSvgLoaded = new Event('allSvgLoaded');
+    document.addEventListener('allSvgLoaded', function () {
+        console.log(svgWomanDoc.getElementById('woman-stressed-heavy'));
+        console.log(svgWomanDoc);
+        console.log(svgManDoc.getElementById('man-stressed-heavy'));
+        console.log(svgManDoc);
+        svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+        svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+        svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+        svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+        svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+        svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+    });
+
+    if (svgWoman.contentDocument) {
+        svgWomanDoc = svgWoman.contentDocument;
+        svgWomanIsLoaded = true;
+    }
+
+    if (svgMan.contentDocument) {
+        svgManDoc = svgMan.contentDocument;
+        svgManIsLoaded = true;
+    }
+
+    if (svgWomanIsLoaded && svgManIsLoaded) {
+        document.dispatchEvent(allSvgLoaded);
+    }
+
+    svgWoman.addEventListener("load",function(ev) {
+        console.log('aaa');
+        svgWomanIsLoaded = true;
+        svgWomanDoc = svgWoman.contentDocument;
+        if (svgWomanIsLoaded && svgManIsLoaded) {
+            document.dispatchEvent(allSvgLoaded);
+        }
+    });
+
+    svgMan.addEventListener("load",function(ev) {
+        console.log('bbb');
+        svgManIsLoaded = true;
+        svgManDoc = svgMan.contentDocument;
+        if (svgWomanIsLoaded && svgManIsLoaded) {
+            document.dispatchEvent(allSvgLoaded);
+        }
+    });
 
     function animateHeavy() {
         setAllFieldsInactive();
@@ -60,7 +99,7 @@ function hoverEvents () {
             console.error(counter.error);
         }
     }
-}
+};
 
 document.addEventListener("DOMContentLoaded", function(ev) {
     hoverEvents();

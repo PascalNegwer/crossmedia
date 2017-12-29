@@ -66,9 +66,7 @@ var fullpage = function () {
         //events
         onLeave: function(index, nextIndex, direction){},
         afterLoad: function(anchorLink, index){},
-        afterRender: function(){
-//            hoverEvents();
-        },
+        afterRender: function(){},
         afterResize: function(){},
         afterResponsive: function(isResponsive){},
         afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){},
