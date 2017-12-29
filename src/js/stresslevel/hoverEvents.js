@@ -9,10 +9,6 @@ var hoverEvents = function() {
 
     var allSvgLoaded = new Event('allSvgLoaded');
     document.addEventListener('allSvgLoaded', function () {
-        console.log(svgWomanDoc.getElementById('woman-stressed-heavy'));
-        console.log(svgWomanDoc);
-        console.log(svgManDoc.getElementById('man-stressed-heavy'));
-        console.log(svgManDoc);
         svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
         svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
         svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
