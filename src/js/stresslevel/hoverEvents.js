@@ -16,23 +16,39 @@ function hoverEvents () {
         svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
         svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
         svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
-    }, false);
+    });
 
-    svgWoman.addEventListener("load",function() {
+    if (svgWoman.contentDocument == null) {
+        svgWoman.addEventListener("load",function() {
+            svgWomanIsLoaded = true;
+            svgWomanDoc = svgWoman.contentDocument;
+            if (svgWomanIsLoaded && svgManIsLoaded) {
+                document.dispatchEvent(allSvgLoadedEvent);
+            }
+        });
+    } else {
         svgWomanIsLoaded = true;
         svgWomanDoc = svgWoman.contentDocument;
         if (svgWomanIsLoaded && svgManIsLoaded) {
             document.dispatchEvent(allSvgLoadedEvent);
         }
-    }, false);
+    }
 
-    svgMan.addEventListener("load",function() {
+    if (svgWoman.contentDocument == null) {
+        svgMan.addEventListener("load",function() {
+            svgManIsLoaded = true;
+            svgManDoc = svgMan.contentDocument;
+            if (svgWomanIsLoaded && svgManIsLoaded) {
+                document.dispatchEvent(allSvgLoadedEvent);
+            }
+        });
+    } else {
         svgManIsLoaded = true;
         svgManDoc = svgMan.contentDocument;
         if (svgWomanIsLoaded && svgManIsLoaded) {
             document.dispatchEvent(allSvgLoadedEvent);
         }
-    }, false);
+    }
 
     function animateHeavy() {
         setAllFieldsInactive();
@@ -81,3 +97,5 @@ function hoverEvents () {
         }
     }
 }
+
+hoverEvents();

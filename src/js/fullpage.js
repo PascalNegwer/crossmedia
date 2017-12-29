@@ -46,7 +46,7 @@ var fullpage = function () {
 
         //Design
         controlArrows: true,
-        verticalCentered: true,
+        verticalCentered: false,
         //sectionsColor : ['#7b7b7b'],
         paddingTop: '5em',
         paddingBottom: '10px',
@@ -67,7 +67,7 @@ var fullpage = function () {
         onLeave: function(index, nextIndex, direction){},
         afterLoad: function(anchorLink, index){},
         afterRender: function(){
-            hoverEvents();
+//            hoverEvents();
         },
         afterResize: function(){},
         afterResponsive: function(isResponsive){},
