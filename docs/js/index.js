@@ -140,6 +140,8 @@ function hoverEvents () {
         svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
     });
 
+    console.log( (svgWoman.contentDocument == null));
+
     if (svgWoman.contentDocument == null) {
         svgWoman.addEventListener("load",function() {
             svgWomanIsLoaded = true;
@@ -156,7 +158,7 @@ function hoverEvents () {
         }
     }
 
-    if (svgWoman.contentDocument == null) {
+    if (svgMan.contentDocument == null) {
         svgMan.addEventListener("load",function() {
             svgManIsLoaded = true;
             svgManDoc = svgMan.contentDocument;
