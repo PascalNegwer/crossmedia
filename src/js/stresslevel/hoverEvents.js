@@ -32,6 +32,8 @@ var hoverEvents = function() {
     }
 
     if (svgWomanIsLoaded && svgManIsLoaded) {
+        console.log(svgWomanIsLoaded);
+        console.log(svgManIsLoaded);
         document.dispatchEvent(allSvgLoaded);
     }
 
