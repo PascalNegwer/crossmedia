@@ -152,13 +152,10 @@ var hoverEvents = function() {
     }
 
     if (svgWomanIsLoaded && svgManIsLoaded) {
-        console.log(svgWomanIsLoaded);
-        console.log(svgManIsLoaded);
         document.dispatchEvent(allSvgLoaded);
     }
 
     svgWoman.addEventListener("load",function(ev) {
-        console.log('aaa');
         svgWomanIsLoaded = true;
         svgWomanDoc = svgWoman.contentDocument;
         if (svgWomanIsLoaded && svgManIsLoaded) {
@@ -167,7 +164,6 @@ var hoverEvents = function() {
     });
 
     svgMan.addEventListener("load",function(ev) {
-        console.log('bbb');
         svgManIsLoaded = true;
         svgManDoc = svgMan.contentDocument;
         if (svgWomanIsLoaded && svgManIsLoaded) {
