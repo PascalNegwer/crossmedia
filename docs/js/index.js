@@ -121,44 +121,20 @@ var lineChart = function () {
 
 lineChart();
 function hoverEvents () {
-    var svgWomanIsLoaded = false;
     var svgWoman = document.getElementById('svg-stresslevel-woman');
     var svgWomanDoc;
 
-    var svgManIsLoaded = false;
     var svgMan = document.getElementById('svg-stresslevel-man');
     var svgManDoc;
 
-    var allSvgLoadedEvent = new Event('allSvgLoaded');
-
-    document.addEventListener('allSvgLoaded', function () {
-        console.log(svgWomanDoc.getElementById('woman-stressed-heavy'));
-        console.log(svgWomanDoc);
-        console.log(svgManDoc.getElementById('woman-stressed-heavy'));
-        console.log(svgManDoc);
-        svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
-        svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
-        svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
-        svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
-        svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
-        svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
-    });
-
-    svgWoman.addEventListener("load",function() {
-        svgWomanIsLoaded = true;
-        svgWomanDoc = svgWoman.contentDocument;
-        if (svgWomanIsLoaded && svgManIsLoaded) {
-            document.dispatchEvent(allSvgLoadedEvent);
-        }
-    });
-
-    svgMan.addEventListener("load",function() {
-        svgManIsLoaded = true;
-        svgManDoc = svgMan.contentDocument;
-        if (svgWomanIsLoaded && svgManIsLoaded) {
-            document.dispatchEvent(allSvgLoadedEvent);
-        }
-    });
+    svgWomanDoc = svgWoman.contentDocument;
+    svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+    svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+    svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+    svgManDoc = svgMan.contentDocument;
+    svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+    svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+    svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
 
     function animateHeavy() {
         setAllFieldsInactive();
@@ -208,7 +184,10 @@ function hoverEvents () {
     }
 }
 
-hoverEvents();
+document.addEventListener("DOMContentLoaded", function(ev) {
+    hoverEvents();
+});
+
 var piechart = function () {
     google.charts.load("current", {packages:["corechart"]});
     google.charts.setOnLoadCallback(drawCharts);
