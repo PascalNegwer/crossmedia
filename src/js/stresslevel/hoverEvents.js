@@ -10,6 +10,10 @@ function hoverEvents () {
     var allSvgLoadedEvent = new Event('allSvgLoaded');
 
     document.addEventListener('allSvgLoaded', function () {
+        console.log(svgWomanDoc.getElementById('woman-stressed-heavy'));
+        console.log(svgWomanDoc);
+        console.log(svgManDoc.getElementById('woman-stressed-heavy'));
+        console.log(svgManDoc);
         svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
         svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
         svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
@@ -18,39 +22,21 @@ function hoverEvents () {
         svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
     });
 
-    console.log( (svgWoman.contentDocument == null));
-
-    if (svgWoman.contentDocument == null) {
-        svgWoman.addEventListener("load",function() {
-            svgWomanIsLoaded = true;
-            svgWomanDoc = svgWoman.contentDocument;
-            if (svgWomanIsLoaded && svgManIsLoaded) {
-                document.dispatchEvent(allSvgLoadedEvent);
-            }
-        });
-    } else {
+    svgWoman.addEventListener("load",function() {
         svgWomanIsLoaded = true;
         svgWomanDoc = svgWoman.contentDocument;
         if (svgWomanIsLoaded && svgManIsLoaded) {
             document.dispatchEvent(allSvgLoadedEvent);
         }
-    }
+    });
 
-    if (svgMan.contentDocument == null) {
-        svgMan.addEventListener("load",function() {
-            svgManIsLoaded = true;
-            svgManDoc = svgMan.contentDocument;
-            if (svgWomanIsLoaded && svgManIsLoaded) {
-                document.dispatchEvent(allSvgLoadedEvent);
-            }
-        });
-    } else {
+    svgMan.addEventListener("load",function() {
         svgManIsLoaded = true;
         svgManDoc = svgMan.contentDocument;
         if (svgWomanIsLoaded && svgManIsLoaded) {
             document.dispatchEvent(allSvgLoadedEvent);
         }
-    }
+    });
 
     function animateHeavy() {
         setAllFieldsInactive();
