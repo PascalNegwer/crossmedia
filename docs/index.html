@@ -38,26 +38,41 @@
         </div>
     </nav>
     <div id="fullpage">
-        <div class="section">
+        <div class="section custom-container">
             <h1>Start</h1>
             <canvas id="myChart"></canvas>
         </div>
-        <div class="section">
+        <div class="section custom-container">
             <h1>Fakten</h1>
         </div>
-        <div class="section">
+        <div class="section custom-container">
             <h1>Persönlichkeitstypen</h1>
         </div>
-        <div class="section">
+        <div class="section custom-container">
             <h1>Berufserfahrung</h1>
         </div>
-        <div class="section">
+        <div class="section custom-container">
             <h1>Stress</h1>
+            <div class="row">
+                <div class="col-md-3 offset-md-3">
+                    <object id="svg-stresslevel-woman" type="image/svg+xml" data="assets/svg/stress/Stresslevel_Frau-01.svg"></object>
+                </div>
+                <div class="col-md-3 text-right">
+                    <object id="svg-stresslevel-man" type="image/svg+xml" data="assets/svg/stress/Stresslevel_Mann-01.svg"></object>
+                </div>
+                <div class="col-md-12 text-center">
+                    <ul class="legend-list">
+                        <li><span class="legend-list_square light">■ </span> nicht gestresst</li>
+                        <li><span class="legend-list_square medium">■ </span> etwas gestresst</li>
+                        <li><span class="legend-list_square heavy">■ </span> sehr gestresst</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="section">
+        <div class="section custom-container">
             <h1>Ende</h1>
         </div>
-        <div class="section">
+        <div class="section custom-container">
             <h1>Impressum</h1>
         </div>
     </div>
@@ -67,6 +82,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/scrolloverflow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/countup@1.8.2/dist/countUp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.3/svg.min.js"></script>
     <script src="./js/index.min.js"></script>
 </body>
 
