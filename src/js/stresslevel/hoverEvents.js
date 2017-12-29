@@ -1,16 +1,38 @@
-function hoverEvents() {
+var hoverEvents = function () {
+    var svgWomanIsLoaded = false;
     var svgWoman = document.getElementById('svg-stresslevel-woman');
-    var svgWomanDoc = svgWoman.contentDocument;
+    var svgWomanDoc;
 
+    var svgManIsLoaded = false;
     var svgMan = document.getElementById('svg-stresslevel-man');
-    var svgManDoc = svgMan.contentDocument;
+    var svgManDoc;
 
-    svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
-    svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
-    svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
-    svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
-    svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
-    svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+    var allSvgLoadedEvent = new Event('allSvgLoaded');
+
+    document.addEventListener('allSvgLoaded', function () {
+        svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+        svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+        svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+        svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+        svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+        svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+    }, false);
+
+    svgWoman.addEventListener("load",function() {
+        svgWomanIsLoaded = true;
+        svgWomanDoc = svgWoman.contentDocument;
+        if (svgWomanIsLoaded && svgManIsLoaded) {
+            document.dispatchEvent(allSvgLoadedEvent);
+        }
+    }, false);
+
+    svgMan.addEventListener("load",function() {
+        svgManIsLoaded = true;
+        svgManDoc = svgMan.contentDocument;
+        if (svgWomanIsLoaded && svgManIsLoaded) {
+            document.dispatchEvent(allSvgLoadedEvent);
+        }
+    }, false);
 
     function animateHeavy() {
         setAllFieldsInactive();
@@ -58,4 +80,6 @@ function hoverEvents() {
             console.error(counter.error);
         }
     }
-}
+};
+
+hoverEvents();
