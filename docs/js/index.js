@@ -47,7 +47,7 @@ var fullpage = function () {
         //Design
         controlArrows: true,
         verticalCentered: true,
-        sectionsColor : ['#7b7b7b'],
+        //sectionsColor : ['#7b7b7b'],
         paddingTop: '5em',
         paddingBottom: '10px',
         fixedElements: '#header, .footer',
@@ -118,99 +118,188 @@ var lineChart = function () {
 };
 
 lineChart();
-var piechartLeft = function () {
-    google.charts.load("current", {packages:["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Label', 'Value'],
-            ['invincible1', 9],
-            ['Nicht gestresst',     2],
-            ['Etwas gestresst',      2],
-            ['Total gestresst',  2],
-            ['invincible2', 1]
-        ]);
+var hoverEvents = function () {
+    var svgWomanIsLoaded = false;
+    var svgWoman = document.getElementById('svg-stresslevel-woman');
+    var svgWomanDoc;
 
+    var svgManIsLoaded = false;
+    var svgMan = document.getElementById('svg-stresslevel-man');
+    var svgManDoc;
+
+    var allSvgLoadedEvent = new Event('allSvgLoaded');
+
+    document.addEventListener('allSvgLoaded', function () {
+        svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+        svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+        svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+        svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+        svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+        svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+    }, false);
+
+    svgWoman.addEventListener("load",function() {
+        svgWomanIsLoaded = true;
+        svgWomanDoc = svgWoman.contentDocument;
+        if (svgWomanIsLoaded && svgManIsLoaded) {
+            document.dispatchEvent(allSvgLoadedEvent);
+        }
+    }, false);
+
+    svgMan.addEventListener("load",function() {
+        svgManIsLoaded = true;
+        svgManDoc = svgMan.contentDocument;
+        if (svgWomanIsLoaded && svgManIsLoaded) {
+            document.dispatchEvent(allSvgLoadedEvent);
+        }
+    }, false);
+
+    function animateHeavy() {
+        setAllFieldsInactive();
+        addActive('man-stressed-heavy', 'woman-stressed-heavy');
+        countUp(svgWomanDoc.getElementById('text'), 2);
+        countUp(svgManDoc.getElementById('text'), 22);
+    }
+
+    function animateMedium() {
+        setAllFieldsInactive();
+        addActive('man-stressed-medium', 'woman-stressed-medium');
+        countUp(svgWomanDoc.getElementById('text'), 50);
+        countUp(svgManDoc.getElementById('text'), 33);
+    }
+
+    function animateLight() {
+        setAllFieldsInactive();
+        addActive('man-stressed-light', 'woman-stressed-light');
+        countUp(svgWomanDoc.getElementById('text'), 44);
+        countUp(svgManDoc.getElementById('text'), 7);
+    }
+
+    function addActive(manFieldName, womanFieldName) {
+        svgWomanDoc.getElementById(womanFieldName).classList.add('active');
+        svgManDoc.getElementById(manFieldName).classList.add('active');
+    }
+
+    function setAllFieldsInactive() {
+        svgWomanDoc.getElementById('woman-stressed-heavy').classList.remove('active');
+        svgWomanDoc.getElementById('woman-stressed-medium').classList.remove('active');
+        svgWomanDoc.getElementById('woman-stressed-light').classList.remove('active');
+        svgManDoc.getElementById('man-stressed-heavy').classList.remove('active');
+        svgManDoc.getElementById('man-stressed-medium').classList.remove('active');
+        svgManDoc.getElementById('man-stressed-light').classList.remove('active');
+    }
+
+    function countUp(element, to) {
         var options = {
-            pieHole: 0.7,
-            width: 600,
-            height: 600,
-            pieSliceText: 'none',
-            legend: {
-                position: 'none'
-            },
-            slices: {
-                0: {
-                    color: 'transparent',
-                    enableInteractivity: false
-                },
-                1: {
-                    color: '#0c8f23'
-                },
-                2: {
-                    color: '#b67200'
-                },
-                3: {
-                    color: '#a90002'
-                },
-                4: {
-                    color: 'transparent',
-                    enableInteractivity: false
-                }
-            },
+            useEasing: true
         };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart-stresslevel-left'));
-        chart.draw(data, options);
+        var counter = new CountUp(element, element.innerHTML, to, 0, 1.5, options);
+        if (!counter.error) {
+            counter.start();
+        } else {
+            console.error(counter.error);
+        }
     }
 };
 
-piechartLeft();
-var piechartRight = function () {
+hoverEvents();
+var piechart = function () {
     google.charts.load("current", {packages:["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            ['Label', 'Value'],
-            ['invincible2', 1],
-            ['Total gestresst',  2],
-            ['Etwas gestresst',      2],
-            ['Nicht gestresst',     2],
-            ['invincible1', 9]
-        ]);
+    google.charts.setOnLoadCallback(drawCharts);
 
-        var options = {
-            pieHole: 0.7,
-            width: 600,
-            height: 600,
-            pieSliceText: 'none',
-            legend: {
-                position: 'none'
-            },
-            slices: {
-                0: {
-                    color: 'transparent',
-                    enableInteractivity: false
+    function drawCharts() {
+        var leftChart = new google.visualization.PieChart(document.getElementById('piechart-stresslevel-left'));
+        leftChart.draw(
+            google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['invincible1', 9],
+                ['Nicht gestresst',     2],
+                ['Etwas gestresst',      2],
+                ['Total gestresst',  2],
+                ['invincible2', 1]
+            ]),
+            {
+                pieHole: 0.7,
+                width: 600,
+                height: 600,
+                pieSliceText: 'none',
+                legend: {
+                    position: 'none'
                 },
-                1: {
-                    color: '#a90002'
-                },
-                2: {
-                    color: '#b67200'
-                },
-                3: {
-                    color: '#0c8f23'
-                },
-                4: {
-                    color: 'transparent',
-                    enableInteractivity: false
+                slices: {
+                    0: {
+                        color: 'transparent',
+                        enableInteractivity: false
+                    },
+                    1: {
+                        color: '#0c8f23'
+                    },
+                    2: {
+                        color: '#b67200'
+                    },
+                    3: {
+                        color: '#a90002'
+                    },
+                    4: {
+                        color: 'transparent',
+                        enableInteractivity: false
+                    }
                 }
-            },
-        };
+            }
+        );
+        google.visualization.events.addListener(leftChart, 'select', function () {
+            console.log(leftChart.getSelection());
+            rightChart.setSelection([{'row': 2, 'column': null}]);
+            console.log(rightChart.getSelection());
+        });
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart-stresslevel-right'));
-        chart.draw(data, options);
+
+        var rightChart = new google.visualization.PieChart(document.getElementById('piechart-stresslevel-right'));
+
+        rightChart.draw(
+            google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['invincible2', 1],
+                ['Total gestresst', 2],
+                ['Etwas gestresst', 2],
+                ['Nicht gestresst', 2],
+                ['invincible1', 9]
+            ]),
+            {
+                pieHole: 0.7,
+                width: 600,
+                height: 600,
+                pieSliceText: 'none',
+                legend: {
+                    position: 'none'
+                },
+                slices: {
+                    0: {
+                        color: 'transparent',
+                        enableInteractivity: false
+                    },
+                    1: {
+                        color: '#a90002'
+                    },
+                    2: {
+                        color: '#b67200'
+                    },
+                    3: {
+                        color: '#0c8f23'
+                    },
+                    4: {
+                        color: 'transparent',
+                        enableInteractivity: false
+                    }
+                }
+            }
+        );
+
+
+        google.visualization.events.addListener(rightChart, 'select', function () {
+            console.log(rightChart.getSelection());
+        });
     }
 };
 
-piechartRight();
+//piechart();
