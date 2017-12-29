@@ -3,26 +3,12 @@
 
 {% block content %}
     <div id="fullpage">
-        <div class="section custom-container">
-            {% include "sections/start.html" %}
-        </div>
-        <div class="section custom-container">
-            {% include "sections/facts.html" %}
-        </div>
-        <div class="section custom-container">
-            {% include "sections/personalities.html" %}
-        </div>
-        <div class="section custom-container">
-            {% include "sections/workExperience.html" %}
-        </div>
-        <div class="section custom-container">
-            {% include "sections/stress.html" %}
-        </div>
-        <div class="section custom-container">
-            {% include "sections/ending.html" %}
-        </div>
-        <div class="section custom-container">
-            {% include "sections/imprint.html" %}
-        </div>
+        {% include "sections/start.html" %}
+        {% include "sections/facts.html" %}
+        {% include "sections/personalities.html" %}
+        {% include "sections/workExperience.html" %}
+        {% include "sections/stress.html" %}
+        {% include "sections/ending.html" %}
+        {% include "sections/imprint.html" %}
     </div>
 {% endblock %}
