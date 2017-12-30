@@ -7,7 +7,7 @@
 	#woman-stressed-medium:hover, #woman-stressed-medium.active {fill:#1597B2;}
 	#woman-stressed-medium{fill:#83A2B2;}
 	#woman-stressed-light:hover, #woman-stressed-light.active {fill:#15BED1;}
-	#woman-stressed-light{fill:#A3C7D1;}
+	#woman-stressed-light{fill:#abc0c9;}
 	#woman-stressed-heavy:hover, #woman-stressed-medium:hover, #woman-stressed-light:hover
 	{filter:url(#inset-shadow-light); cursor: pointer;}
 	#woman-stressed-heavy.active, #woman-stressed-medium.active, #woman-stressed-light.active
@@ -53,9 +53,9 @@
 <path class="st9" d="M34.2,256.7c-10.5,32.4-16.2,67-16.2,103s5.7,70.5,16.2,103l317-103L34.2,256.7z"/>
 <path class="st9" d="M155.4,90.2c-56.2,40.9-99.2,99-121.1,166.6l317,103L155.4,90.2z"/>
 <path class="st9" d="M34.2,462.7c21.9,67.5,64.9,125.6,121.1,166.6l195.9-269.5L34.2,462.7z"/>
-<path id="woman-stressed-heavy" class="inactive" d="M163,100.6C108.9,140,67.6,195.8,46.6,260.7l304.7,99L163,100.6z"/>
-<path id="woman-stressed-medium" class="inactive" d="M46.6,260.7c-10.1,31.2-15.6,64.4-15.6,99s5.5,67.8,15.6,99l304.7-99L46.6,260.7z"/>
-<path id="woman-stressed-light" class="inactive" d="M46.6,458.7c21.1,64.9,62.4,120.8,116.4,160.1l188.3-259.1L46.6,458.7z"/>
+<path id="woman-stressed-heavy" d="M163,100.6C108.9,140,67.6,195.8,46.6,260.7l304.7,99L163,100.6z"/>
+<path id="woman-stressed-medium" d="M46.6,260.7c-10.1,31.2-15.6,64.4-15.6,99s5.5,67.8,15.6,99l304.7-99L46.6,260.7z"/>
+<path id="woman-stressed-light" class="active" d="M46.6,458.7c21.1,64.9,62.4,120.8,116.4,160.1l188.3-259.1L46.6,458.7z"/>
 <path class="st4" d="M227.6,222.6c-0.6-7.5,2.3-13.9,5.9-20.2c1.5-2.6,3.3-5,5.5-7.1c1.2-0.4,2.2,0.1,3.3,0.5
 	c0.5,0.3,0.7,0.8,0.8,1.3c1,6.7,4.1,12.5,8.6,17.5c0.2,0.2,0.3,0.5,0.6,0.7c-0.4-0.4-0.5-0.9-0.7-1.3c-0.3-3.5,1-6.6,3.4-9.1
 	c1.3-1.4,2.4-3.2,4.6-3.4c4.7,1.1,9.3,2.7,14,4.1c10,2.9,20,5.5,30.3,6.5c9.1,1,18.1,0,27.2-1.4c6.7-1,13.2-2.9,19.2-6
@@ -97,7 +97,7 @@
 		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
 	</clipPath>
 	<g class="st10">
-		<text transform="matrix(1 0 0 1 300.0542 406.0099)" class="st0 st11 st12" text-anchor="end" id="text">52</text>
+		<text transform="matrix(1 0 0 1 300.0542 406.0099)" class="st0 st11 st12" text-anchor="end" id="text">47</text>
 		<text transform="matrix(1 0 0 1 300.0542 406.0099)" class="st0 st11 st12"> %</text>
 	</g>
 </g>

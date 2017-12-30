@@ -170,22 +170,22 @@ var hoverEvents = function() {
     function animateHeavy() {
         setAllFieldsInactive();
         addActive('man-stressed-heavy', 'woman-stressed-heavy');
-        countUp(svgWomanDoc.getElementById('text'), 2);
-        countUp(svgManDoc.getElementById('text'), 22);
+        countUp(svgWomanDoc.getElementById('text'), 30);
+        countUp(svgManDoc.getElementById('text'), 27);
     }
 
     function animateMedium() {
         setAllFieldsInactive();
         addActive('man-stressed-medium', 'woman-stressed-medium');
-        countUp(svgWomanDoc.getElementById('text'), 50);
-        countUp(svgManDoc.getElementById('text'), 33);
+        countUp(svgWomanDoc.getElementById('text'), 22);
+        countUp(svgManDoc.getElementById('text'), 21);
     }
 
     function animateLight() {
         setAllFieldsInactive();
         addActive('man-stressed-light', 'woman-stressed-light');
-        countUp(svgWomanDoc.getElementById('text'), 44);
-        countUp(svgManDoc.getElementById('text'), 7);
+        countUp(svgWomanDoc.getElementById('text'), 47);
+        countUp(svgManDoc.getElementById('text'), 52);
     }
 
     function addActive(manFieldName, womanFieldName) {
