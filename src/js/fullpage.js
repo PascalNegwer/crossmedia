@@ -14,7 +14,7 @@ var fullpage = function () {
         //Scrolling
         css3: true,
         scrollingSpeed: 700,
-        autoScrolling: false,
+        autoScrolling: true,
         fitToSection: true,
         fitToSectionDelay: 1000,
         scrollBar: false,
@@ -46,8 +46,8 @@ var fullpage = function () {
 
         //Design
         controlArrows: true,
-        verticalCentered: true,
-        sectionsColor : ['#7b7b7b'],
+        verticalCentered: false,
+        //sectionsColor : ['#7b7b7b'],
         paddingTop: '5em',
         paddingBottom: '10px',
         fixedElements: '#header, .footer',

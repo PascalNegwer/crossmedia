@@ -14,7 +14,7 @@ var fullpage = function () {
         //Scrolling
         css3: true,
         scrollingSpeed: 700,
-        autoScrolling: false,
+        autoScrolling: true,
         fitToSection: true,
         fitToSectionDelay: 1000,
         scrollBar: false,
@@ -46,8 +46,8 @@ var fullpage = function () {
 
         //Design
         controlArrows: true,
-        verticalCentered: true,
-        sectionsColor : ['#7b7b7b'],
+        verticalCentered: false,
+        //sectionsColor : ['#7b7b7b'],
         paddingTop: '5em',
         paddingBottom: '10px',
         fixedElements: '#header, .footer',
@@ -118,17 +118,6 @@ var lineChart = function () {
 };
 
 lineChart();
-var waypoint = function () {
-    var waypoint = new Waypoint({
-        element: document.getElementById('myChart'),
-        handler: function() {
-            console.log('Basic waypoint triggered');
-        }
-    });
-};
-
-waypoint();
-
 var animateLaptop = function () {
     var laptopSvg = document.getElementById('personalities-svg-laptop');
     var button1 = document.getElementById('kleiner');
@@ -142,3 +131,204 @@ var animateLaptop = function () {
 };
 
 animateLaptop();
+var hoverEvents = function() {
+    var svgWomanIsLoaded = false;
+    var svgWoman = document.getElementById('svg-stresslevel-woman');
+    var svgWomanDoc;
+
+    var svgManIsLoaded = false;
+    var svgMan = document.getElementById('svg-stresslevel-man');
+    var svgManDoc;
+
+    var allSvgLoaded = new Event('allSvgLoaded');
+    document.addEventListener('allSvgLoaded', function () {
+        svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+        svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+        svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+        svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+        svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+        svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+    });
+
+    if (svgWoman.contentDocument) {
+        svgWomanDoc = svgWoman.contentDocument;
+        svgWomanIsLoaded = true;
+    }
+
+    if (svgMan.contentDocument) {
+        svgManDoc = svgMan.contentDocument;
+        svgManIsLoaded = true;
+    }
+
+    if (svgWomanIsLoaded && svgManIsLoaded) {
+        document.dispatchEvent(allSvgLoaded);
+    }
+
+    svgWoman.addEventListener("load",function(ev) {
+        svgWomanIsLoaded = true;
+        svgWomanDoc = svgWoman.contentDocument;
+        if (svgWomanIsLoaded && svgManIsLoaded) {
+            document.dispatchEvent(allSvgLoaded);
+        }
+    });
+
+    svgMan.addEventListener("load",function(ev) {
+        svgManIsLoaded = true;
+        svgManDoc = svgMan.contentDocument;
+        if (svgWomanIsLoaded && svgManIsLoaded) {
+            document.dispatchEvent(allSvgLoaded);
+        }
+    });
+
+    function animateHeavy() {
+        setAllFieldsInactive();
+        addActive('man-stressed-heavy', 'woman-stressed-heavy');
+        countUp(svgWomanDoc.getElementById('text'), 30);
+        countUp(svgManDoc.getElementById('text'), 27);
+    }
+
+    function animateMedium() {
+        setAllFieldsInactive();
+        addActive('man-stressed-medium', 'woman-stressed-medium');
+        countUp(svgWomanDoc.getElementById('text'), 23);
+        countUp(svgManDoc.getElementById('text'), 21);
+    }
+
+    function animateLight() {
+        setAllFieldsInactive();
+        addActive('man-stressed-light', 'woman-stressed-light');
+        countUp(svgWomanDoc.getElementById('text'), 47);
+        countUp(svgManDoc.getElementById('text'), 52);
+    }
+
+    function addActive(manFieldName, womanFieldName) {
+        svgWomanDoc.getElementById(womanFieldName).classList.add('active');
+        svgManDoc.getElementById(manFieldName).classList.add('active');
+    }
+
+    function setAllFieldsInactive() {
+        svgWomanDoc.getElementById('woman-stressed-heavy').classList.remove('active');
+        svgWomanDoc.getElementById('woman-stressed-medium').classList.remove('active');
+        svgWomanDoc.getElementById('woman-stressed-light').classList.remove('active');
+        svgManDoc.getElementById('man-stressed-heavy').classList.remove('active');
+        svgManDoc.getElementById('man-stressed-medium').classList.remove('active');
+        svgManDoc.getElementById('man-stressed-light').classList.remove('active');
+    }
+
+    function countUp(element, to) {
+        var options = {
+            useEasing: true
+        };
+        var counter = new CountUp(element, element.innerHTML, to, 0, 1.5, options);
+        if (!counter.error) {
+            counter.start();
+        } else {
+            console.error(counter.error);
+        }
+    }
+};
+
+document.addEventListener("DOMContentLoaded", function(ev) {
+    hoverEvents();
+});
+
+var piechart = function () {
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawCharts);
+
+    function drawCharts() {
+        var leftChart = new google.visualization.PieChart(document.getElementById('piechart-stresslevel-left'));
+        leftChart.draw(
+            google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['invincible1', 9],
+                ['Nicht gestresst',     2],
+                ['Etwas gestresst',      2],
+                ['Total gestresst',  2],
+                ['invincible2', 1]
+            ]),
+            {
+                pieHole: 0.7,
+                width: 600,
+                height: 600,
+                pieSliceText: 'none',
+                legend: {
+                    position: 'none'
+                },
+                slices: {
+                    0: {
+                        color: 'transparent',
+                        enableInteractivity: false
+                    },
+                    1: {
+                        color: '#0c8f23'
+                    },
+                    2: {
+                        color: '#b67200'
+                    },
+                    3: {
+                        color: '#a90002'
+                    },
+                    4: {
+                        color: 'transparent',
+                        enableInteractivity: false
+                    }
+                }
+            }
+        );
+        google.visualization.events.addListener(leftChart, 'select', function () {
+            console.log(leftChart.getSelection());
+            rightChart.setSelection([{'row': 2, 'column': null}]);
+            console.log(rightChart.getSelection());
+        });
+
+
+        var rightChart = new google.visualization.PieChart(document.getElementById('piechart-stresslevel-right'));
+
+        rightChart.draw(
+            google.visualization.arrayToDataTable([
+                ['Label', 'Value'],
+                ['invincible2', 1],
+                ['Total gestresst', 2],
+                ['Etwas gestresst', 2],
+                ['Nicht gestresst', 2],
+                ['invincible1', 9]
+            ]),
+            {
+                pieHole: 0.7,
+                width: 600,
+                height: 600,
+                pieSliceText: 'none',
+                legend: {
+                    position: 'none'
+                },
+                slices: {
+                    0: {
+                        color: 'transparent',
+                        enableInteractivity: false
+                    },
+                    1: {
+                        color: '#a90002'
+                    },
+                    2: {
+                        color: '#b67200'
+                    },
+                    3: {
+                        color: '#0c8f23'
+                    },
+                    4: {
+                        color: 'transparent',
+                        enableInteractivity: false
+                    }
+                }
+            }
+        );
+
+
+        google.visualization.events.addListener(rightChart, 'select', function () {
+            console.log(rightChart.getSelection());
+        });
+    }
+};
+
+//piechart();

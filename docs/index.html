@@ -10,68 +10,115 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul id="main-nav" class="navbar-nav">
-                <li data-menuanchor="home" class="nav-item">
-                    <a class="navbar-brand" href="#home">DATASCIENTIST</a>
-                </li>
-                <li data-menuanchor="facts" class="nav-item">
-                    <a class="nav-link" href="#facts">Fakten</a>
-                </li>
-                <li data-menuanchor="personalities" class="nav-item">
-                    <a class="nav-link" href="#personalities">Persönlichkeitstypen</a>
-                </li>
-                <li data-menuanchor="workExperience" class="nav-item">
-                    <a class="nav-link" href="#workExperience">Berufserfahrung</a>
-                </li>
-                <li data-menuanchor="stress" class="nav-item">
-                    <a class="nav-link" href="#stress">Stress</a>
-                </li>
-                <li data-menuanchor="ending" class="nav-item">
-                    <a class="nav-link" href="#ending">Schluss</a>
-                </li>
-                <li data-menuanchor="imprint" class="nav-item">
-                    <a class="nav-link" href="#imprint">Impressum</a>
-                </li>
-            </ul>
-        </div>
+    <nav class="navbar navbar-expand-lg custom-container ">
+        <a data-menuanchor="home" class="navbar-brand pull-left" href="#home">DATASCIENTIST</a>
+        <ul id="main-nav" class="navbar-nav">
+            <li data-menuanchor="facts" class="nav-item">
+                <a class="nav-link" href="#facts">Fakten</a>
+            </li>
+            <li data-menuanchor="personalities" class="nav-item">
+                <a class="nav-link" href="#personalities">Persönlichkeitstypen</a>
+            </li>
+            <li data-menuanchor="workExperience" class="nav-item">
+                <a class="nav-link" href="#workExperience">Berufserfahrung</a>
+            </li>
+            <li data-menuanchor="stress" class="nav-item">
+                <a class="nav-link" href="#stress">Stress</a>
+            </li>
+            <li data-menuanchor="ending" class="nav-item">
+                <a class="nav-link" href="#ending">Schluss</a>
+            </li>
+            <li data-menuanchor="imprint" class="nav-item">
+                <a class="nav-link" href="#imprint">Impressum</a>
+            </li>
+        </ul>
     </nav>
     <div id="fullpage">
-        <div class="section">
+        <div class="section custom-container">
             <h1>Start</h1>
             <canvas id="myChart"></canvas>
-            <div class="jumbotron">
-                asdf
-            </div>
-            <div class="jumbotron">
-                asdf
-            </div>
-            <div class="jumbotron">
-                asdf
-            </div>
-            <div class="jumbotron">
-                asdf
-            </div>
         </div>
-        <div class="section">
+        <div class="section custom-container">
+            <h2>DATA SCIENCE</h2>
+            <h3>um was handelt es sich dabei?</h3>
+            <hr/>
             <h1>Fakten</h1>
         </div>
-        <div class="section">
+        <div class="section custom-container">
+            <h2>PERSÖNLICHKEITSTYPEN</h2>
+            <h3>WELCHE EIGENSCHAFTEN SIND FÜR DATA SCIENTISTS CHARAKTERISTISCH?</h3>
+            <hr/>
             <img id="personalities-svg-laptop" src="assets/svg/laptop.svg" />
             <button id="kleiner" class="btn">kleiner</button>
             <button id="groeßer" class="btn">größer</button>
         </div>
-        <div class="section">
+        <div class="section custom-container">
+            <h2>EIN JUNGER BERUF - STETIG IM WANDEL</h2>
+            <h3>WIE VIEL BERUFSERFAHRUNG KÖNNEN DATA SCIENTISTS VON HEUTE VORZEIGEN?</h3>
+            <hr/>
             <h1>Berufserfahrung</h1>
         </div>
-        <div class="section">
-            <h1>Stress</h1>
+        <div class="section custom-container">
+            <h2>STRESS IM BERUF</h2>
+            <h3>WIE STRESSIG FINDEN DATA SCIENTIST IHREN BERUF?</h3>
+            <hr/>
+            <div class="row">
+                <div class="col-md-3 offset-md-3">
+                    <object id="svg-stresslevel-woman" type="image/svg+xml" data="assets/svg/stress/Stresslevel_Frau-01.svg"></object>
+                </div>
+                <div class="col-md-3 text-right">
+                    <object id="svg-stresslevel-man" type="image/svg+xml" data="assets/svg/stress/Stresslevel_Mann-01.svg"></object>
+                </div>
+                <div class="col-md-12 text-center">
+                    <ul class="legend-list">
+                        <li><span class="legend-list_square heavy">■ </span> sehr gestresst</li>
+                        <li><span class="legend-list_square medium">■ </span> etwas gestresst</li>
+                        <li><span class="legend-list_square light">■ </span> nicht gestresst</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <h4>Ursachen:</h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <h5>Kommunikations-Probleme:</h5>
+                </div>
+                <div class="col-md-3">
+                    <h5>Mangelhaftes Rollenprofil:</h5>
+                </div>
+                <div class="col-md-3">
+                    <h5>VERANTWORTUNG OHNE ENTSCHEIDUNGSGEWALT:
+                    </h5>
+                </div>
+                <div class="col-md-3">
+                    <h5>MANGEL AN FÄHIGKEITEN:</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <p>Probleme in der Kommunikation mit dem direkten Vorgesetzten.</p>
+                </div>
+                <div class="col-md-3">
+                    <p>Offiziell oder inoffizell hinzugefügte Aktivitäten lassen kein objektives Maß für die Leistungsmessung zu.</p>
+                </div>
+                <div class="col-md-3">
+                    <p>Keine direkte Kontrolle über erfolgsabhängige Faktoren bei der Aufgabenerledigung.</p>
+                </div>
+                <div class="col-md-3">
+                    <p>Zu schwerer Job oder keine angemessene Ausbildung.</p>
+                </div>
+            </div>
         </div>
-        <div class="section">
+        <div class="section custom-container">
+            <h2>DAS DATA SCIENTIST TEAM</h2>
+            <h3>DEN PERFEKTEN DATA SCIENTIST GIBT ES NICHT!</h3>
+            <hr/>
             <h1>Ende</h1>
         </div>
-        <div class="section">
+        <div class="section custom-container">
             <h1>Impressum</h1>
         </div>
     </div>
@@ -81,7 +128,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/scrolloverflow.min.js"></script>
-    <script src="./js/index.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/countup@1.8.2/dist/countUp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.3/svg.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 
 </html>
