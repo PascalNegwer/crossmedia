@@ -177,7 +177,7 @@ var hoverEvents = function() {
     function animateMedium() {
         setAllFieldsInactive();
         addActive('man-stressed-medium', 'woman-stressed-medium');
-        countUp(svgWomanDoc.getElementById('text'), 22);
+        countUp(svgWomanDoc.getElementById('text'), 23);
         countUp(svgManDoc.getElementById('text'), 21);
     }
 
