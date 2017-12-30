@@ -1,6 +1,7 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 490.9 645.1" style="enable-background:new 0 0 490.9 645.1;" xml:space="preserve">
 <style type="text/css">
+	*{pointer-events: none;}
 	.st0{fill:#706F6F;}
 	#woman-stressed-heavy:hover, #woman-stressed-heavy.active {fill:#155872;}
 	#woman-stressed-heavy{fill:#5C6872;}
@@ -9,9 +10,11 @@
 	#woman-stressed-light:hover, #woman-stressed-light.active {fill:#15BED1;}
 	#woman-stressed-light{fill:#abc0c9;}
 	#woman-stressed-heavy:hover, #woman-stressed-medium:hover, #woman-stressed-light:hover
-	{filter:url(#inset-shadow-light); cursor: pointer;}
+	{filter:url(#inset-shadow-light);cursor:pointer;}
 	#woman-stressed-heavy.active, #woman-stressed-medium.active, #woman-stressed-light.active
 	{filter:url(#inset-shadow);}
+	#woman-stressed-heavy, #woman-stressed-medium, #woman-stressed-light
+	{pointer-events: all;}
 	.st4{fill:#E72687;}
 	.st5{fill:#DDB090;}
 	.st6{fill:#422913;}

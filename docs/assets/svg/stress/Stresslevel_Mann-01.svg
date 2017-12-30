@@ -1,6 +1,7 @@
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 509.7 627.1" style="enable-background:new 0 0 509.7 627.1;" xml:space="preserve">
 <style type="text/css">
+	*{pointer-events: none;}
 	.st0{fill:#706F6F;}
 	#man-stressed-heavy:hover, #man-stressed-heavy.active {fill:#155872;}
 	#man-stressed-heavy{fill:#5C6872;}
@@ -12,6 +13,8 @@
 	{filter:url(#inset-shadow-light); cursor: pointer;}
 	#man-stressed-heavy.active, #man-stressed-medium.active, #man-stressed-light.active
 	{filter:url(#inset-shadow);}
+	#man-stressed-heavy, #man-stressed-medium, #man-stressed-light
+	{pointer-events: all;}
 	.st4{fill:#442318;}
 	.st5{fill:#1A6C5D;}
 	.st6{fill:#F4D4B3;}
