@@ -29,7 +29,9 @@ function laptopContentPieChart(women, men, tooltipTitle) {
                 animateRotate: true
             },
             tooltips: {
+                position: 'custom',
                 bodyFontSize: 14,
+                bodySpacing: 2,
                 callbacks: {
                     label: function(tooltipItem, data) {
                         //get the concerned dataset
@@ -50,5 +52,16 @@ function laptopContentPieChart(women, men, tooltipTitle) {
         }
     };
 
+    Chart.Tooltip.positioners.custom = function(elements, eventPosition) {
+        var tooltip = this;
+
+        /* ... */
+
+        return {
+            x: 100,
+            y: 100
+        };
+    };
     var myPieChart = new Chart(ctx,config);
+
 }
