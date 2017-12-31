@@ -21,6 +21,7 @@ var hoverEventsPersonalities = function() {
         var doc = personalities.contentDocument;
         var laptopSvg = document.getElementById('svg-laptop');
         var laptopSvgDoc = laptopSvg.contentDocument;
+        document.getElementById('svg-laptop').classList.add('hidden');
 
         if (!doc || !laptopSvgDoc) {
             setTimeout(function(){
