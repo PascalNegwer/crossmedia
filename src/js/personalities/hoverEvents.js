@@ -19,6 +19,9 @@ var hoverEventsPersonalities = function() {
         var doc = personalities.contentDocument;
         var laptopSvgDoc = laptopSvg.contentDocument;
 
+        console.log(doc);
+        console.log(laptopSvgDoc);
+
         getPersonalityData().forEach(function (el) {
             var object = doc.getElementById(el.name);
             object.addEventListener('mouseenter', function () {
