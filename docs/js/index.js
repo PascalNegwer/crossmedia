@@ -302,12 +302,17 @@ function getPersonalityData() {
 var hoverEventsPersonalities = function() {
     var personalities = document.getElementById('svg-personalities-all');
     var laptopSvg = document.getElementById('svg-laptop');
+    var allSvgLoaded = new Event('laptopSvgLoaded');
 
     if (personalities) {
-        initializeHoverEvents();
+        document.dispatchEvent(allSvgLoaded);
     }
 
     personalities.addEventListener("load",function(ev) {
+        document.dispatchEvent(allSvgLoaded);
+    });
+
+    document.addEventListener('laptopSvgLoaded', function () {
         initializeHoverEvents();
     });
 
