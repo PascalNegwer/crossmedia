@@ -405,7 +405,6 @@ var hoverEventsPersonalities = function() {
     var allSvgLoaded = new Event('laptopSvgLoaded');
 
     console.log(personalities);
-    console.log(laptopSvg);
 
     document.addEventListener('laptopSvgLoaded', function () {
         initializeHoverEvents();
