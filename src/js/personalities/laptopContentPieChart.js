@@ -29,7 +29,7 @@ function laptopContentPieChart(women, men, tooltipTitle) {
                 animateRotate: true
             },
             tooltips: {
-                bodyFontSize: 16,
+                bodyFontSize: 14,
                 callbacks: {
                     label: function(tooltipItem, data) {
                         //get the concerned dataset

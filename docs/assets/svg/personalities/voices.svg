@@ -3,6 +3,9 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="500px" height="500px" viewBox="0 0 500 500" enable-background="new 0 0 500 500" xml:space="preserve">
+	<defs>
+        <style>* {pointer-events:none;}</style>
+    </defs>
 <path fill-rule="evenodd" clip-rule="evenodd" fill="#361284" d="M80.034,500.89c1.65-14.112,4.104-27.99,10.713-40.783
 	c9.085-17.597,22.464-29.943,41.325-35.843c10.839-3.386,20.874-6.554,31.725-9.889c1.32-0.406,3.216-0.728,5.094-0.438
 	c0.372,3.647,1.853,5.318,2.346,8.351c5.463,33.692,29.018,58.215,62.295,62.793c16.974,2.329,34.274,1.894,50.573-5.349

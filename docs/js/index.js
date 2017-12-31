@@ -126,17 +126,22 @@ function getPersonalityData() {
             'tooltipTitle': 'der Cruncher',
             'x': '-260',
             'y': '-80',
-            'women': 40,
-            'men': 60,
+            'women': 15.5,
+            'men': 84.5,
             'skills': [
                 {
                     'title': 'Eigenschaften',
                     'points': [
+                        'Zurückhaltendste Gruppe',
+                        'überwiegend reaktive Persönlichkeiten',
+                        'mögen Routine und Beständigkeit',
+                        'hohe technische Kompetenz und Konstanz'
                     ]
                 },
                 {
-                    'title': 'POSITION',
+                    'title': 'Einsatzgebiete',
                     'points': [
+                        'Technische Aufgaben wie Datenaufbereitung, -analyse, -monitoring, Qualitätskontrolle'
                     ]
                 }
             ]
@@ -147,17 +152,24 @@ function getPersonalityData() {
             'tooltipTitle': 'der Gurus',
             'x': '-200',
             'y': '-40',
-            'women': 40,
-            'men': 60,
+            'women': 26.4,
+            'men': 73.6,
             'skills': [
                 {
                     'title': 'Eigenschaften',
                     'points': [
+                        'Hohes Maß an Introvertiertheit',
+                        'besonderes Interesse an wissenschaftlichen und technischen Themen',
+                        'starke proaktive Extrovertiertheit',
+                        'Kommunikationsstärke',
+                        'Überzeugungskraft',
+                        'soziale Kompetenz'
                     ]
                 },
                 {
-                    'title': 'POSITION',
+                    'title': 'Einsatzgebiete',
                     'points': [
+                        'Entscheider von Vorteilen der Data Science überzeugen'
                     ]
                 }
             ]
@@ -168,17 +180,31 @@ function getPersonalityData() {
             'tooltipTitle': 'der weiteren Profile',
             'x': '-200',
             'y': '-120',
-            'women': 40,
-            'men': 60,
+            'women': 18,
+            'men': 82,
             'skills': [
                 {
-                    'title': 'Eigenschaften',
+                    'title': 'Ground Breaker',
                     'points': [
+                        'bieten neue Ansätze, Methoden und Möglichkeiten, die sie aus einem Mix aus Inspiration und streng logischem Denken ziehen'
                     ]
                 },
                 {
-                    'title': 'POSITION',
+                    'title': 'Seeker',
                     'points': [
+                        'kombinieren hervorragendes technisches Knowhow mit Wissbegierde, die sie antreibt, nach Lösungen zu suchen. Zu finden beispielsweise in der Forschung'
+                    ]
+                },
+                {
+                    'title': 'Teacher',
+                    'points': [
+                        'sind gut im Teilen von Informationen und darin, andere zum Lernen zu bewegen. Mögliche Rollen umfassen Ausbildung und Mentoring'
+                    ]
+                },
+                {
+                    'title': '',
+                    'points': [
+                        'durch technologischen Weiterentwicklung wird möglicherweise immer weniger Gewicht auf technische Charaktereigenschaften gelegt, während seltenere Profile wie die Ground Breaker, Teacher oder Seeker an Bedeutung gewinnen.'
                     ]
                 }
             ]
@@ -189,17 +215,22 @@ function getPersonalityData() {
             'tooltipTitle': 'der Lynchpins',
             'x': '-150',
             'y': '-40',
-            'women': 40,
-            'men': 60,
+            'women': 28,
+            'men': 72,
             'skills': [
                 {
                     'title': 'Eigenschaften',
                     'points': [
+                        'Teamplayer',
+                        'kaum tiefgreifendes technisches Wissen',
+                        'leisten wichtige Unterstützungsarbeit'
                     ]
                 },
                 {
-                    'title': 'POSITION',
+                    'title': 'Einsatzgebiete',
                     'points': [
+                        'Koordination',
+                        'Administration'
                     ]
                 }
             ]
@@ -210,8 +241,8 @@ function getPersonalityData() {
             'tooltipTitle': 'der Geeks',
             'x': '-100',
             'y': '-20',
-            'women': 40,
-            'men': 60,
+            'women': 22.5,
+            'men': 77.5,
             'skills': [
                 {
                     'title': 'Eigenschaften',
@@ -226,7 +257,7 @@ function getPersonalityData() {
                     ]
                 },
                 {
-                    'title': 'POSITION',
+                    'title': 'Einsatzgebiete',
                     'points': [
                         'Systemanforderungen festlegen',
                         'Prozesse aufsetzen und programmieren'
@@ -240,17 +271,22 @@ function getPersonalityData() {
             'tooltipTitle': 'der Driver',
             'x': '-60',
             'y': '-40',
-            'women': 40,
-            'men': 60,
+            'women': 18,
+            'men': 82,
             'skills': [
                 {
                     'title': 'Eigenschaften',
                     'points': [
+                        'Proaktive Introvertierte',
+                        'hochgradig pragmatisch',
+                        'starke Konzentration auf Zielumsetzung, Überwachung und Priorisierung',
+                        'bringen Aufträge erfolgreich zum Abschluss'
                     ]
                 },
                 {
-                    'title': 'POSITION',
+                    'title': 'Einsatzgebiete',
                     'points': [
+                        'Ideale Projektmanager und Teamleiter durch Selbstbewusstsein und Ergebnisorientiertheit'
                     ]
                 }
             ]
@@ -261,17 +297,21 @@ function getPersonalityData() {
             'tooltipTitle': 'der Deliverer',
             'x': '-10',
             'y': '-80',
-            'women': 40,
-            'men': 60,
+            'women': 24,
+            'men': 76,
             'skills': [
                 {
                     'title': 'Eigenschaften',
                     'points': [
+                        'Proaktiv',
+                        'starke Neigung zur Aneignung und/oder Anwendung technischer Fähigkeiten'
                     ]
                 },
                 {
-                    'title': 'POSITION',
+                    'title': 'Einsatzgebiete',
                     'points': [
+                        'Projektmanagement',
+                        'Mitarbeiterführung'
                     ]
                 }
             ]
@@ -282,17 +322,22 @@ function getPersonalityData() {
             'tooltipTitle': 'der Voices',
             'x': '-70',
             'y': '-120',
-            'women': 40,
-            'men': 60,
+            'women': 41,
+            'men': 59,
             'skills': [
                 {
                     'title': 'Eigenschaften',
                     'points': [
+                        'Kommunikationsstarke Menschen',
+                        'weniger technisches Wissen als Gurus',
+                        'Können andere auf weniger technischen Ebene für Potenzial von Big Data und Data Science begeistern',
+                        'positive Ansichtsweise'
                     ]
                 },
                 {
-                    'title': 'POSITION',
+                    'title': 'Einsatzgebiete',
                     'points': [
+                        'Ergebnispräsentation und Unterstützung bei Implementierung'
                     ]
                 }
             ]
@@ -437,7 +482,7 @@ function laptopContentPieChart(women, men, tooltipTitle) {
                 animateRotate: true
             },
             tooltips: {
-                bodyFontSize: 16,
+                bodyFontSize: 14,
                 callbacks: {
                     label: function(tooltipItem, data) {
                         //get the concerned dataset
