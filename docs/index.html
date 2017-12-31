@@ -38,30 +38,41 @@
             <h1>Start</h1>
             <canvas id="myChart"></canvas>
         </div>
-        <div class="section custom-container">
-            <h2>DATA SCIENCE</h2>
-            <h3>um was handelt es sich dabei?</h3>
-            <hr/>
+        <div id="" class="section custom-container">
+            <div class="section-header">
+                <h2>DATA SCIENCE</h2>
+                <h3>um was handelt es sich dabei?</h3>
+                <hr/>
+            </div>
             <h1>Fakten</h1>
         </div>
-        <div class="section custom-container">
-            <h2>PERSÖNLICHKEITSTYPEN</h2>
-            <h3>WELCHE EIGENSCHAFTEN SIND FÜR DATA SCIENTISTS CHARAKTERISTISCH?</h3>
-            <hr/>
-            <img id="personalities-svg-laptop" src="assets/svg/laptop.svg" />
-            <button id="kleiner" class="btn">kleiner</button>
-            <button id="groeßer" class="btn">größer</button>
+        <div id="personalities-section-header" class="section custom-container">
+            <div class="section-header">
+                <h2>PERSÖNLICHKEITSTYPEN</h2>
+                <h3>WELCHE EIGENSCHAFTEN SIND FÜR DATA SCIENTISTS CHARAKTERISTISCH?</h3>
+                <hr/>
+            </div>
+            <div class="personalities-container">
+                <object id="svg-personalities-all" type="image/svg+xml" data="assets/svg/personalities/allPersonalities.svg"></object>
+                <object id="svg-laptop" class="hidden normal" type="image/svg+xml" data="assets/svg/personalities/laptop.svg"></object>
+                <div id="laptop-content" class="hidden normal">
+                </div>
+            </div>
         </div>
-        <div class="section custom-container">
-            <h2>EIN JUNGER BERUF - STETIG IM WANDEL</h2>
-            <h3>WIE VIEL BERUFSERFAHRUNG KÖNNEN DATA SCIENTISTS VON HEUTE VORZEIGEN?</h3>
-            <hr/>
+        <div id="" class="section custom-container">
+            <div class="section-header">
+                <h2>EIN JUNGER BERUF - STETIG IM WANDEL</h2>
+                <h3>WIE VIEL BERUFSERFAHRUNG KÖNNEN DATA SCIENTISTS VON HEUTE VORZEIGEN?</h3>
+                <hr/>
+            </div>
             <h1>Berufserfahrung</h1>
         </div>
-        <div class="section custom-container">
-            <h2>STRESS IM BERUF</h2>
-            <h3>WIE STRESSIG FINDEN DATA SCIENTIST IHREN BERUF?</h3>
-            <hr/>
+        <div id="" class="section custom-container">
+            <div class="section-header">
+                <h2>STRESS IM BERUF</h2>
+                <h3>WIE STRESSIG FINDEN DATA SCIENTIST IHREN BERUF?</h3>
+                <hr/>
+            </div>
             <div class="row">
                 <div class="col-md-3 offset-md-3">
                     <object id="svg-stresslevel-woman" type="image/svg+xml" data="assets/svg/stress/Stresslevel_Frau-01.svg"></object>
@@ -112,10 +123,12 @@
                 </div>
             </div>
         </div>
-        <div class="section custom-container">
-            <h2>DAS DATA SCIENTIST TEAM</h2>
-            <h3>DEN PERFEKTEN DATA SCIENTIST GIBT ES NICHT!</h3>
-            <hr/>
+        <div id="" class="section custom-container">
+            <div class="section-header">
+                <h2>DAS DATA SCIENTIST TEAM</h2>
+                <h3>DEN PERFEKTEN DATA SCIENTIST GIBT ES NICHT!</h3>
+                <hr/>
+            </div>
             <h1>Ende</h1>
         </div>
         <div class="section custom-container">
@@ -126,10 +139,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/vendors/scrolloverflow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.5/jquery.fullpage.js"></script>
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/countup@1.8.2/dist/countUp.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.3/svg.min.js"></script>
     <script src="./js/index.js"></script>

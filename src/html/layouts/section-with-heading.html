@@ -1,7 +1,8 @@
-<div class="section custom-container">
-    <h2>{{ headline }}</h2>
-    <h3>{{ subheadline }}</h3>
-
-    <hr/>
+<div id="{{ sectionId }}" class="section custom-container">
+    <div class="section-header">
+        <h2>{{ headline }}</h2>
+        <h3>{{ subheadline }}</h3>
+        <hr/>
+    </div>
     {% block content %}{% endblock %}
 </div>

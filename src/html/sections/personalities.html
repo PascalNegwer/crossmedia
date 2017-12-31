@@ -1,10 +1,16 @@
 {% extends "../layouts/section-with-heading.html" %}
 {% set headline = "PERSÖNLICHKEITSTYPEN" %}
 {% set subheadline = "WELCHE EIGENSCHAFTEN SIND FÜR DATA SCIENTISTS CHARAKTERISTISCH?" %}
+{% set sectionId = "personalities-section-header" %}
 
 
 {% block content %}
-<img id="personalities-svg-laptop" src="assets/svg/laptop.svg"/>
-<button id="kleiner" class="btn">kleiner</button>
-<button id="groeßer" class="btn">größer</button>
+<div class="personalities-container">
+    <object id="svg-personalities-all" type="image/svg+xml" data="assets/svg/personalities/allPersonalities.svg"></object>
+    <object id="svg-laptop" class="hidden normal" type="image/svg+xml" data="assets/svg/personalities/laptop.svg"></object>
+    <div id="laptop-content" class="hidden normal">
+
+    </div>
+</div>
+
 {% endblock %}

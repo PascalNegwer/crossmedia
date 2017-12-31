@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 303.27 193.55">
+    <defs>
+        <style>.cls-90{fill:none;}.cls-91{fill:#312f30;}.cls-92{clip-path:url(#clip-path);}.cls-93{fill:#ccc;}</style>
+        <clipPath id="clip-path">
+            <rect class="cls-90" width="303.27" height="193.55"/>
+        </clipPath>
+    </defs>
+    <title>Element 5</title>
+    <g id="Ebene_2" data-name="Ebene 2">
+        <g id="Ebene_1-2" data-name="Ebene 1">
+            <rect id="test" class="cls-91" x="21.89" y="6.58" width="259.48" height="160.84"/>
+            <g class="cls-92">
+                <path class="cls-93"
+                      d="M30.25,0A15.86,15.86,0,0,0,14.46,15.81V157.92a15.84,15.84,0,0,0,15.79,15.79H273a15.84,15.84,0,0,0,15.78-15.79V15.81A15.86,15.86,0,0,0,273,0Zm0,9H273a6.64,6.64,0,0,1,6.74,6.77V157.92a6.62,6.62,0,0,1-6.74,6.75H30.25a6.62,6.62,0,0,1-6.74-6.75V15.81A6.64,6.64,0,0,1,30.25,9"/>
+            </g>
+            <g class="cls-92">
+                <path class="cls-93"
+                      d="M0,176.32c0,9.55,6.59,17.23,14.78,17.23H288.49c8.18,0,14.78-7.69,14.78-17.23Zm174.22,6.14H129.05a1.26,1.26,0,0,1,0-2.52h45.17a1.26,1.26,0,0,1,0,2.52"/>
+            </g>
+        </g>
+    </g>
+</svg>

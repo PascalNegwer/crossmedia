@@ -118,19 +118,328 @@ var lineChart = function () {
 };
 
 lineChart();
-var animateLaptop = function () {
-    var laptopSvg = document.getElementById('personalities-svg-laptop');
-    var button1 = document.getElementById('kleiner');
-    button1.onclick = function () {
-        laptopSvg.classList.remove('focused');
-    };
-    var button2 = document.getElementById('groeßer');
-    button2.onclick = function () {
-        laptopSvg.classList.add('focused');
-    };
+function getPersonalityData() {
+    return [
+        {
+            'name': 'cruncher',
+            'title': 'Die Cruncher',
+            'tooltipTitle': 'der Cruncher',
+            'x': '-260',
+            'y': '-80',
+            'women': 40,
+            'men': 60,
+            'skills': [
+                {
+                    'title': 'Eigenschaften',
+                    'points': [
+                    ]
+                },
+                {
+                    'title': 'POSITION',
+                    'points': [
+                    ]
+                }
+            ]
+        },
+        {
+            'name': 'gurus',
+            'title': 'Die Gurus',
+            'tooltipTitle': 'der Gurus',
+            'x': '-200',
+            'y': '-40',
+            'women': 40,
+            'men': 60,
+            'skills': [
+                {
+                    'title': 'Eigenschaften',
+                    'points': [
+                    ]
+                },
+                {
+                    'title': 'POSITION',
+                    'points': [
+                    ]
+                }
+            ]
+        },
+        {
+            'name': 'other',
+            'title': 'Weitere Profile',
+            'tooltipTitle': 'der weiteren Profile',
+            'x': '-200',
+            'y': '-120',
+            'women': 40,
+            'men': 60,
+            'skills': [
+                {
+                    'title': 'Eigenschaften',
+                    'points': [
+                    ]
+                },
+                {
+                    'title': 'POSITION',
+                    'points': [
+                    ]
+                }
+            ]
+        },
+        {
+            'name': 'lynchpins',
+            'title': 'Die Lynchpins',
+            'tooltipTitle': 'der Lynchpins',
+            'x': '-150',
+            'y': '-40',
+            'women': 40,
+            'men': 60,
+            'skills': [
+                {
+                    'title': 'Eigenschaften',
+                    'points': [
+                    ]
+                },
+                {
+                    'title': 'POSITION',
+                    'points': [
+                    ]
+                }
+            ]
+        },
+        {
+            'name': 'geeks',
+            'title': 'Die Geeks',
+            'tooltipTitle': 'der Geeks',
+            'x': '-100',
+            'y': '-20',
+            'women': 40,
+            'men': 60,
+            'skills': [
+                {
+                    'title': 'Eigenschaften',
+                    'points': [
+                        'technisch “vorbelastet"',
+                        'logische und analytische Fähigkeiten',
+                        '“schwarz-weiß” Denken',
+                        'mögen klare Ansagen',
+                        'vermeiden es “um den heißen Brei” zu reden',
+                        'emotionale Argumente zählen nicht',
+                        'Vorliebe für Details und Regeln'
+                    ]
+                },
+                {
+                    'title': 'POSITION',
+                    'points': [
+                        'Systemanforderungen festlegen',
+                        'Prozesse aufsetzen und programmieren'
+                    ]
+                }
+            ]
+        },
+        {
+            'name': 'driver',
+            'title': 'Die Driver',
+            'tooltipTitle': 'der Driver',
+            'x': '-60',
+            'y': '-40',
+            'women': 40,
+            'men': 60,
+            'skills': [
+                {
+                    'title': 'Eigenschaften',
+                    'points': [
+                    ]
+                },
+                {
+                    'title': 'POSITION',
+                    'points': [
+                    ]
+                }
+            ]
+        },
+        {
+            'name': 'deliverer',
+            'title': 'Die Deliverer',
+            'tooltipTitle': 'der Deliverer',
+            'x': '-10',
+            'y': '-80',
+            'women': 40,
+            'men': 60,
+            'skills': [
+                {
+                    'title': 'Eigenschaften',
+                    'points': [
+                    ]
+                },
+                {
+                    'title': 'POSITION',
+                    'points': [
+                    ]
+                }
+            ]
+        },
+        {
+            'name': 'voices',
+            'title': 'Die Voices',
+            'tooltipTitle': 'der Voices',
+            'x': '-70',
+            'y': '-120',
+            'women': 40,
+            'men': 60,
+            'skills': [
+                {
+                    'title': 'Eigenschaften',
+                    'points': [
+                    ]
+                },
+                {
+                    'title': 'POSITION',
+                    'points': [
+                    ]
+                }
+            ]
+        }
+    ];
+}
+var hoverEventsPersonalities = function() {
+    var personalities = document.getElementById('svg-personalities-all');
+    var laptopSvg = document.getElementById('svg-laptop');
+
+    if (personalities) {
+        initializeHoverEvents();
+    }
+
+    personalities.addEventListener("load",function(ev) {
+        initializeHoverEvents();
+    });
+
+    function initializeHoverEvents() {
+        var doc = personalities.contentDocument;
+        var laptopSvgDoc = laptopSvg.contentDocument;
+
+        getPersonalityData().forEach(function (el) {
+            var object = doc.getElementById(el.name);
+            object.addEventListener('mouseenter', function () {
+                object.setAttribute('transform', 'scale(1.2 1.2), translate(' + el.x + ', ' + el.y + ')');
+
+            });
+
+            object.addEventListener('mouseleave', function () {
+                object.setAttribute('transform', '');
+            });
+
+            object.addEventListener('click', function () {
+                $('#svg-personalities-all').fadeOut(2000, 'swing');
+                $('#personalities-section-header .section-header').fadeOut(2000, 'swing');
+                $('#svg-laptop').fadeIn(1000, 'swing');
+                document.getElementById('svg-laptop').classList.add('bigger');
+                document.getElementById('laptop-content').classList.add('bigger');
+                var skills = '';
+                el.skills.forEach(function (skill) {
+                    skills += '<h5>' + skill.title+ '</h5>' +
+                        '<ul>';
+                    skill.points.forEach(function (point) {
+                       skills +=  '<li>' + point + '</li>';
+                    });
+                    skills += '</ul>';
+                });
+                document.getElementById('laptop-content').innerHTML =
+                    '<object id="svg-geek" class="single-personality" type="image/svg+xml" data="assets/svg/personalities/' + el.name + '.svg"></object>' +
+                    '<object id="svg-laptop-close" class="pull-right" type="image/svg+xml" data="assets/svg/closeButton.svg"></object>' +
+                    '<h1>' + el.title + '</h1>' +
+                    '<hr/>' +
+                    '<div class="row">' +
+                    '    <div class="col-md-6">' +
+                    '        <canvas id="pieChart" width="10%" height="10%"></canvas>' +
+                    '    </div>' +
+                    '    <div class="col-md-6">' + skills +
+                    '    </div>' +
+                    '</div>';
+
+                setTimeout(function(){
+                    $('#laptop-content').fadeIn(1000, 'swing');
+                    var factorWidth = laptopSvg.offsetWidth / 303.27;
+                    var factorHeight = laptopSvg.offsetHeight / 193.55;
+                    document.getElementById('laptop-content').style.width = laptopSvgDoc.getElementById('test').attributes.width.value * factorWidth + 'px';
+                    document.getElementById('laptop-content').style.height = laptopSvgDoc.getElementById('test').attributes.height.value * factorHeight + 'px';
+                    document.getElementById('laptop-content').style.top = '95px';
+                    laptopContentPieChart(el.women, el.men, el.tooltipTitle);
+                }, 1000);
+
+                document.getElementById('svg-laptop-close').addEventListener('load', function (ev) {
+                    document.getElementById('svg-laptop-close').contentDocument.addEventListener('click', function (ev) {
+                        $('#svg-personalities-all').fadeIn(2000, 'swing');
+                        $('#personalities-section-header .section-header').fadeIn(2000, 'swing');
+                        document.getElementById('svg-laptop').classList.remove('bigger');
+                        document.getElementById('laptop-content').classList.remove('bigger');
+                        document.getElementById('laptop-content').style = '';
+                        $('#svg-laptop').fadeOut(1000, 'swing');
+                        });
+
+                });
+            });
+        });
+
+    }
 };
 
-animateLaptop();
+document.addEventListener("DOMContentLoaded", function(ev) {
+    hoverEventsPersonalities();
+});
+
+function laptopContentPieChart(women, men, tooltipTitle) {
+    var ctx = document.getElementById("pieChart");
+
+    var config = {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [
+                    women,
+                    men
+                ],
+                backgroundColor: [
+                    '#F2A68C',
+                    '#48A3BB'
+                ]
+            }],
+            labels: [
+                "Frauen",
+                "Männer"
+            ]
+        },
+        options: {
+            responsive: true,
+            legend: {
+                display: false
+            },
+            animation: {
+                animateScale: true,
+                animateRotate: true
+            },
+            tooltips: {
+                bodyFontSize: 16,
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        //get the concerned dataset
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        //calculate the total of this data set
+                        var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                            return previousValue + currentValue;
+                        });
+                        //get the current items value
+                        var currentValue = dataset.data[tooltipItem.index];
+                        //calculate the precentage based on the total and current item, also this does a rough rounding to give a whole number
+                        var precentage = Math.floor(((currentValue/total) * 100)+0.5);
+
+                        return ' ' + precentage + ' % ' + tooltipTitle + ' sind ' + (parseInt(tooltipItem.index) ? 'Männer' : 'Frauen');
+                    }
+                }
+            }
+        }
+    };
+
+    var myPieChart = new Chart(ctx,config);
+}
+
 var hoverEvents = function() {
     var svgWomanIsLoaded = false;
     var svgWoman = document.getElementById('svg-stresslevel-woman');
