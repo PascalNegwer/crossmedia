@@ -1,6 +1,5 @@
 var hoverEventsPersonalities = function() {
     var personalities = document.getElementById('svg-personalities-all');
-    var laptopSvg = document.getElementById('svg-laptop');
     var allSvgLoaded = new Event('laptopSvgLoaded');
 
     console.log(personalities);
@@ -21,11 +20,13 @@ var hoverEventsPersonalities = function() {
 
     function initializeHoverEvents() {
         var doc = personalities.contentDocument;
+        var laptopSvg = document.getElementById('svg-laptop');
         var laptopSvgDoc = laptopSvg.contentDocument;
 
         if (!doc || !laptopSvgDoc) {
             setTimeout(function(){
                 console.log(doc);
+                console.log(laptopSvg);
                 console.log(laptopSvgDoc);
                 initializeHoverEvents();
             }, 1000);
