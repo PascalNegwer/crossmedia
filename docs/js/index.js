@@ -373,7 +373,7 @@ var hoverEventsPersonalities = function() {
                     '    <div class="col-md-6">' +
                     '        <canvas id="pieChart" width="10%" height="10%"></canvas>' +
                     '    </div>' +
-                    '    <div class="col-md-6">' + skills +
+                    '    <div id="skillset" class="col-md-6">' + skills +
                     '    </div>' +
                     '</div>';
 
