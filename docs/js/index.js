@@ -304,6 +304,13 @@ var hoverEventsPersonalities = function() {
     var laptopSvg = document.getElementById('svg-laptop');
     var allSvgLoaded = new Event('laptopSvgLoaded');
 
+    console.log(personalities);
+    console.log(laptopSvg);
+
+    document.addEventListener('laptopSvgLoaded', function () {
+        initializeHoverEvents();
+    }, false);
+
     if (personalities) {
         document.dispatchEvent(allSvgLoaded);
     }
@@ -312,16 +319,21 @@ var hoverEventsPersonalities = function() {
         document.dispatchEvent(allSvgLoaded);
     });
 
-    document.addEventListener('laptopSvgLoaded', function () {
-        initializeHoverEvents();
-    });
 
     function initializeHoverEvents() {
         var doc = personalities.contentDocument;
         var laptopSvgDoc = laptopSvg.contentDocument;
 
-        console.log(doc);
-        console.log(laptopSvgDoc);
+        if (!doc || !laptopSvgDoc) {
+            setTimeout(function(){
+                console.log(doc);
+                console.log(laptopSvgDoc);
+                initializeHoverEvents();
+            }, 1000);
+            console.log('a');
+
+            return;
+        }
 
         getPersonalityData().forEach(function (el) {
             var object = doc.getElementById(el.name);
