@@ -81,18 +81,6 @@ var hoverEvents = function() {
         svgManDoc.getElementById('man-stressed-medium').classList.remove('active');
         svgManDoc.getElementById('man-stressed-light').classList.remove('active');
     }
-
-    function countUp(element, to) {
-        var options = {
-            useEasing: true
-        };
-        var counter = new CountUp(element, element.innerHTML, to, 0, 1.5, options);
-        if (!counter.error) {
-            counter.start();
-        } else {
-            console.error(counter.error);
-        }
-    }
 };
 
 document.addEventListener("DOMContentLoaded", function(ev) {
