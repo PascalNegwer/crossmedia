@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 786.41 315.7">
+    <defs>
+        <style>.cls-1,.cls-4{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#ccc;}.cls-4{stroke:#1597b2;stroke-width:8px;}.cls-5{fill:#1597b2;}.cls-6,.cls-7{isolation:isolate;font-size:36px;fill:#fff;font-family:ArialMT, Arial;}.cls-7{letter-spacing:-0.07em;}.cls-8{letter-spacing:-0.02em;}.cls-9{letter-spacing:-0.06em;}</style>
+        <clipPath id="clip-path" transform="translate(-575.79 -394.3)">
+            <rect class="cls-1" width="1938" height="1081"/>
+        </clipPath>
+    </defs>
+    <title>Ebene 2</title>
+    <g id="Ebene_2" data-name="Ebene 2">
+        <g id="Ebene_2-2" data-name="Ebene 2">
+            <g class="cls-2">
+                <rect class="cls-3" x="415.41" y="112.1" width="30.1" height="203.6"/>
+            </g>
+            <g class="cls-2">
+                <rect class="cls-3" x="415.41" y="93.4" width="30.1" height="14.5"/>
+            </g>
+            <g class="cls-2">
+                <path class="cls-3"
+                      d="M763.6,647.7h13.5v17.7H763.6Zm22.9,0H800v17.7H786.5Zm22.9,0h13.5v17.7H809.4Zm22.8,0h13.5v17.7H832.2Zm-68.6-27h13.5v17.7H763.6Zm22.9,0H800v17.7H786.5Zm22.9,0h13.5v17.7H809.4Zm22.8,0h13.5v17.7H832.2Zm-68.6-27.1h13.5v17.7H763.6Zm22.9,0H800v17.7H786.5Zm22.9,0h13.5v17.7H809.4Zm22.8,0h13.5v17.7H832.2Zm-68.6-27h13.5v17.7H763.6Zm22.9,0H800v17.7H786.5Zm22.9,0h13.5v17.7H809.4Zm22.8,0h13.5v17.7H832.2Zm-68.6-27h13.5v17.7H763.6Zm22.9,0H800v17.7H786.5Zm22.9,0h13.5v17.7H809.4Zm22.8,0h13.5v17.7H832.2Zm-68.6-27h13.5v17.7H763.6Zm22.9,0H800v17.7H786.5Zm22.9,0h13.5v17.7H809.4Zm22.8,0h13.5v17.7H832.2ZM746,710H864.4V487.7H746Z"
+                      transform="translate(-575.79 -394.3)"/>
+            </g>
+            <g class="cls-2">
+                <path class="cls-3"
+                      d="M887.3,647.7h13.5v17.7H887.3Zm22.8,0h13.5v17.7H910.1Zm22.9,0h13.5v17.7H933Zm22.8,0h13.5v17.7H955.8Zm-68.5-27h13.5v17.7H887.3Zm22.8,0h13.5v17.7H910.1Zm22.9,0h13.5v17.7H933Zm22.8,0h13.5v17.7H955.8Zm-68.5-27.1h13.5v17.7H887.3Zm22.8,0h13.5v17.7H910.1Zm22.9,0h13.5v17.7H933Zm22.8,0h13.5v17.7H955.8ZM868.6,710H987V579.1H868.6Z"
+                      transform="translate(-575.79 -394.3)"/>
+            </g>
+            <g class="cls-2">
+                <path class="cls-3"
+                      d="M1047.3,647.7h13.5v17.7h-13.5Zm22.8,0h13.5v17.7h-13.5Zm22.9,0h13.5v17.7H1093Zm22.8,0h13.5v17.7h-13.5Zm22.9,0h13.5v17.7h-13.5Zm22.9,0h13.5v17.7h-13.5Zm-22.9-31.6-57.1-37v37l-56.1-37V709h169.3V616.2l-56.1-37Z"
+                      transform="translate(-575.79 -394.3)"/>
+            </g>
+            <g class="cls-2">
+                <polyline class="cls-4"
+                          points="2.21 271.5 129.71 187.2 240.31 212.5 346.11 130.2 429.71 180.9 525.61 52.2 609.21 111.3 774.01 12.2"/>
+            </g>
+            <g class="cls-2">
+                <polygon class="cls-5" points="736.41 12 786.41 0 761.41 45 736.41 12"/>
+            </g>
+            <g class="cls-2">
+                <text class="cls-6" transform="translate(272.22 44.74)">D</text>
+                <text class="cls-7" transform="translate(297.81 44.74)">A
+                    <tspan class="cls-8" x="21.34" y="0">T</tspan>
+                </text>
+                <text class="cls-6" transform="translate(339.82 44.74)">
+                    <tspan class="cls-9">A</tspan>
+                    <tspan x="22.03" y="0" xml:space="preserve"> SCIENCE</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

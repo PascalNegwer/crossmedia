@@ -8,8 +8,8 @@ var fullpage = function () {
         //navigationPosition: 'none',
         //navigationTooltips: [],
         //showActiveTooltip: false,
-        //slidesNavigation: false,
-        //slidesNavPosition: 'bottom',
+        slidesNavigation: true,
+        slidesNavPosition: 'bottom',
 
         //Scrolling
         css3: true,
@@ -22,7 +22,7 @@ var fullpage = function () {
         easingcss3: 'ease',
         loopBottom: false,
         loopTop: false,
-        loopHorizontal: true,
+        loopHorizontal: false,
         continuousVertical: false,
         continuousHorizontal: false,
         scrollHorizontally: false,
