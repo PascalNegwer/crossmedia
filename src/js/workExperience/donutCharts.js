@@ -5,7 +5,7 @@ var donutCharts = (function () {
                 data: {
             datasets: [{
                 backgroundColor: [
-                    isMale ? '#1597B2' : '#FF8E73',
+                    isMale ? '#1597B2' : '#ffa489',
                     '#c7c7c7'
                 ],
                 borderWidth: 1,

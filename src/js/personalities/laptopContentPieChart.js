@@ -10,7 +10,7 @@ function laptopContentPieChart(women, men, tooltipTitle) {
                     men
                 ],
                 backgroundColor: [
-                    '#FF8E73',
+                    '#ffa489',
                     '#1597B2'
                 ]
             }],

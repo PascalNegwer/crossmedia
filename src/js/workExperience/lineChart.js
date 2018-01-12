@@ -4,7 +4,7 @@ function lineChart() {
         datasets: [{
             //label: 'Dataset 1',
             backgroundColor: '#1597B2',
-            hoverBackgroundColor: "#FF8E73",
+            hoverBackgroundColor: "#ffa489",
             borderWidth: 1,
             data: [
                 40,

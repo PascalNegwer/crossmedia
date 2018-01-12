@@ -58,7 +58,7 @@ var fullpage = function () {
         //Design
         controlArrows: true,
         verticalCentered: false, // Linda: geändert auf false da true beim Styling nur Probleme bringt
-        sectionsColor : ['#312F30', '#3E3E3F', '#4B4C4D', '#57585A', '#6C6D70', '#8A8C8F', '#9D9FA2'],
+        sectionsColor : ['#312F30', '#3E3E3F', '#4B4C4D', '#57585A', '#5c5d5f', '#6b6c6f', '#9d9fa2'],
         paddingTop: '56px', //Linda: geändert, da hier sonst oben immer ein Rand ist. Navi Heigth in nav.sass auch auf 56px geändert. Beide Werte müssen gleich sein
         paddingBottom: '10px',
         fixedElements: '#header, .footer',
@@ -439,7 +439,7 @@ function laptopContentPieChart(women, men, tooltipTitle) {
                     men
                 ],
                 backgroundColor: [
-                    '#FF8E73',
+                    '#ffa489',
                     '#1597B2'
                 ]
             }],
@@ -591,7 +591,7 @@ var donutCharts = (function () {
                 data: {
             datasets: [{
                 backgroundColor: [
-                    isMale ? '#1597B2' : '#FF8E73',
+                    isMale ? '#1597B2' : '#ffa489',
                     '#c7c7c7'
                 ],
                 borderWidth: 1,
@@ -644,7 +644,7 @@ function lineChart() {
         datasets: [{
             //label: 'Dataset 1',
             backgroundColor: '#1597B2',
-            hoverBackgroundColor: "#FF8E73",
+            hoverBackgroundColor: "#ffa489",
             borderWidth: 1,
             data: [
                 40,
