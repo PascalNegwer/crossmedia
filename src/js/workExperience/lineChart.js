@@ -3,8 +3,8 @@ function lineChart() {
         labels: ['< 1', '1 - 3', '4 - 10', '11 - 20', '20 +'],
         datasets: [{
             //label: 'Dataset 1',
-            backgroundColor: '#48A3BB',
-            hoverBackgroundColor: "#f2a68c",
+            backgroundColor: '#1597B2',
+            hoverBackgroundColor: "#FF8E73",
             borderWidth: 1,
             data: [
                 40,
