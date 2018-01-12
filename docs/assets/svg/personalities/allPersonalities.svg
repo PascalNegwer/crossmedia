@@ -96,9 +96,7 @@
                       transform="translate(0 0)"/>
             </g>
             <g class="cls-14">
-                <text class="cls-15" transform="translate(1411.76 563.95)">C</text>
-                <text class="cls-15" transform="translate(1426.99 563.95)">R</text>
-                <text class="cls-15" transform="translate(1442.17 563.95)">UNCHER</text>
+                <text class="cls-15" transform="translate(1411.76 563.95)">CRUNCHER</text>
             </g>
         </g>
         <g id="gurus">
@@ -166,10 +164,7 @@
                       transform="translate(0 0)"/>
             </g>
             <g class="cls-14">
-                <text class="cls-15" transform="translate(1228.95 324.78)">GU</text>
-                <text class="cls-15" transform="translate(1261.35 324.78)">R</text>
-                <text class="cls-15" transform="translate(1276.53 324.78)">U</text>
-                <text class="cls-15" transform="translate(1292.77 324.78)">S</text>
+                <text class="cls-15" transform="translate(1228.95 324.78)">GURUS</text>
             </g>
         </g>
         <g id="lynchpins">
@@ -234,8 +229,7 @@
                       transform="translate(0 0)"/>
             </g>
             <g class="cls-14">
-                <text class="cls-31" transform="translate(865.66 260.71)">L</text>
-                <text class="cls-15" transform="translate(876.31 260.71)">YNCHPINS</text>
+                <text class="cls-31" transform="translate(865.66 260.71)">LYNCHPINS</text>
             </g>
         </g>
         <g id="geeks">
@@ -490,8 +484,7 @@
             </g>
             <g class="cls-5">
                 <g class="cls-14">
-                    <text class="cls-15" transform="translate(398.08 794.64)">V</text>
-                    <text class="cls-15" transform="translate(413.03 794.64)">OICES</text>
+                    <text class="cls-15" transform="translate(398.08 794.64)">VOICES</text>
                 </g>
             </g>
             <text class="cls-7" transform="translate(332.48 729.48)">4%</text>
