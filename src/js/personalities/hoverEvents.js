@@ -2,8 +2,6 @@ var hoverEventsPersonalities = function() {
     var personalities = document.getElementById('svg-personalities-all');
     var allSvgLoaded = new Event('laptopSvgLoaded');
 
-    console.log(personalities);
-
     document.addEventListener('laptopSvgLoaded', function () {
         initializeHoverEvents();
     }, false);
@@ -16,7 +14,6 @@ var hoverEventsPersonalities = function() {
         document.dispatchEvent(allSvgLoaded);
     });
 
-
     function initializeHoverEvents() {
         var doc = personalities.contentDocument;
         var laptopSvg = document.getElementById('svg-laptop');
@@ -25,13 +22,8 @@ var hoverEventsPersonalities = function() {
 
         if (!doc || !laptopSvgDoc) {
             setTimeout(function(){
-                console.log(doc);
-                console.log(laptopSvg);
-                console.log(laptopSvgDoc);
                 initializeHoverEvents();
             }, 1000);
-            console.log('a');
-
             return;
         }
 
@@ -70,7 +62,7 @@ var hoverEventsPersonalities = function() {
                     '    <div class="col-md-6">' +
                     '        <canvas id="pieChart" width="10%" height="10%"></canvas>' +
                     '    </div>' +
-                    '    <div class="col-md-6">' + skills +
+                    '    <div id="skillset" class="col-md-6">' + skills +
                     '    </div>' +
                     '</div>';
 

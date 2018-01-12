@@ -12,7 +12,7 @@
             {
                 pointer-events:all;
             }
-            .cls-1,.cls-65,.cls-66,.cls-67,.cls-68,.cls-69{fill:none;}.cls-15,.cls-2,.cls-31,.cls-7{fill:#fff;}.cls-3{clip-path:url(#clip-path);}.cls-4{fill:#ccc;}.cls-5{clip-path:url(#clip-path-3);}.cls-6{fill:#1597b2;}.cls-14,.cls-15,.cls-31,.cls-7{isolation:isolate;}.cls-7{font-size:32px;}.cls-15,.cls-31,.cls-7{font-family:ArialMT, Arial;}.cls-8{clip-path:url(#clip-path-4);}.cls-9{fill:#f01788;}.cls-10{fill:#ddaf90;}.cls-11{fill:#442500;}.cls-12{fill:#580746;}.cls-13{fill:#b2917b;}.cls-15,.cls-31{font-size:23px;}.cls-16{clip-path:url(#clip-path-12);}.cls-17{fill:#f2d4b3;}.cls-18{fill:#167729;}.cls-19{fill:#d86416;}.cls-20{fill:#e9c09c;}.cls-21{fill:#f3dcc7;}.cls-22{fill:#f3ddc8;}.cls-23{fill:#56d66b;}.cls-24{fill:#da7911;}.cls-25{clip-path:url(#clip-path-25);}.cls-26{fill:#6b256b;}.cls-27{fill:#f1d9c4;}.cls-28{fill:#b05c9f;}.cls-29{fill:#f6e964;}.cls-30{fill:#eebb9d;}.cls-31{letter-spacing:-0.08em;}.cls-32{clip-path:url(#clip-path-37);}.cls-33{fill:#1b73ae;}.cls-34{fill:#e4b194;}.cls-35{fill:#a36517;}.cls-36{fill:#d19d7a;}.cls-37{fill:#1a5375;}.cls-38{clip-path:url(#clip-path-44);}.cls-39{fill:#d75ea3;}.cls-40{fill:#f6f6f6;}.cls-41{fill:#f4c19f;}.cls-42{fill:#f96488;}.cls-43{fill:#e2b596;}.cls-44{fill:#a00505;}.cls-45{clip-path:url(#clip-path-54);}.cls-46{fill:#5b0b08;}.cls-47{fill:#cbbed7;}.cls-48{fill:#482f6a;}.cls-49{fill:#f1d8b4;}.cls-50{fill:#808788;}.cls-51{fill:#e9e9e9;}.cls-52{fill:#ebc9a2;}.cls-53{fill:#b54040;}.cls-54{clip-path:url(#clip-path-67);}.cls-55{fill:#442217;}.cls-56{fill:#186b5c;}.cls-57{fill:#f3d3b3;}.cls-58{letter-spacing:-0.02em;}.cls-59{clip-path:url(#clip-path-74);}.cls-60{fill:#361284;}.cls-61{fill:#180d08;}.cls-62{fill:#9b6649;}.cls-63{fill:#84533e;}.cls-64{fill:#57084b;}.cls-65,.cls-66,.cls-67,.cls-68,.cls-69{stroke:#1597b2;stroke-linecap:round;stroke-linejoin:round;stroke-width:5px;}.cls-65{stroke-dasharray:0 15.32;}.cls-67{stroke-dasharray:0 15.67;}.cls-68{stroke-dasharray:0 15.2;}.cls-69{stroke-dasharray:0 15.32;}
+            .cls-1,.cls-65,.cls-66,.cls-67,.cls-68,.cls-69{fill:none;}.cls-15,.cls-2,.cls-31,.cls-7{fill:#eeeeeb;}.cls-3{clip-path:url(#clip-path);}.cls-4{fill:#ccc;}.cls-5{clip-path:url(#clip-path-3);}.cls-6{fill:#1597b2;}.cls-14,.cls-15,.cls-31,.cls-7{isolation:isolate;}.cls-7{font-size:32px;}.cls-15,.cls-31,.cls-7{font-family:'Quicksand';}.cls-8{clip-path:url(#clip-path-4);}.cls-9{fill:#f01788;}.cls-10{fill:#ddaf90;}.cls-11{fill:#442500;}.cls-12{fill:#580746;}.cls-13{fill:#b2917b;}.cls-15,.cls-31{font-size:23px;}.cls-16{clip-path:url(#clip-path-12);}.cls-17{fill:#f2d4b3;}.cls-18{fill:#167729;}.cls-19{fill:#d86416;}.cls-20{fill:#e9c09c;}.cls-21{fill:#f3dcc7;}.cls-22{fill:#f3ddc8;}.cls-23{fill:#56d66b;}.cls-24{fill:#da7911;}.cls-25{clip-path:url(#clip-path-25);}.cls-26{fill:#6b256b;}.cls-27{fill:#f1d9c4;}.cls-28{fill:#b05c9f;}.cls-29{fill:#f6e964;}.cls-30{fill:#eebb9d;}.cls-31{letter-spacing:-0.08em;}.cls-32{clip-path:url(#clip-path-37);}.cls-33{fill:#1b73ae;}.cls-34{fill:#e4b194;}.cls-35{fill:#a36517;}.cls-36{fill:#d19d7a;}.cls-37{fill:#1a5375;}.cls-38{clip-path:url(#clip-path-44);}.cls-39{fill:#d75ea3;}.cls-40{fill:#f6f6f6;}.cls-41{fill:#f4c19f;}.cls-42{fill:#f96488;}.cls-43{fill:#e2b596;}.cls-44{fill:#a00505;}.cls-45{clip-path:url(#clip-path-54);}.cls-46{fill:#5b0b08;}.cls-47{fill:#cbbed7;}.cls-48{fill:#482f6a;}.cls-49{fill:#f1d8b4;}.cls-50{fill:#808788;}.cls-51{fill:#e9e9e9;}.cls-52{fill:#ebc9a2;}.cls-53{fill:#b54040;}.cls-54{clip-path:url(#clip-path-67);}.cls-55{fill:#442217;}.cls-56{fill:#186b5c;}.cls-57{fill:#f3d3b3;}.cls-58{letter-spacing:-0.02em;}.cls-59{clip-path:url(#clip-path-74);}.cls-60{fill:#361284;}.cls-61{fill:#180d08;}.cls-62{fill:#9b6649;}.cls-63{fill:#84533e;}.cls-64{fill:#57084b;}.cls-65,.cls-66,.cls-67,.cls-68,.cls-69{stroke:#1597b2;stroke-linecap:round;stroke-linejoin:round;stroke-width:5px;}.cls-65{stroke-dasharray:0 15.32;}.cls-67{stroke-dasharray:0 15.67;}.cls-68{stroke-dasharray:0 15.2;}.cls-69{stroke-dasharray:0 15.32;}
         .cls-90{fill:none;}.cls-91{fill:#fff;}.cls-92{clip-path:url(#clip-path);}.cls-93{fill:#ccc;}
         </style>
         <clipPath id="clip-path" transform="translate(0 0)">
@@ -96,9 +96,7 @@
                       transform="translate(0 0)"/>
             </g>
             <g class="cls-14">
-                <text class="cls-15" transform="translate(1411.76 563.95)">C</text>
-                <text class="cls-15" transform="translate(1426.99 563.95)">R</text>
-                <text class="cls-15" transform="translate(1442.17 563.95)">UNCHER</text>
+                <text class="cls-15" transform="translate(1411.76 563.95)">CRUNCHER</text>
             </g>
         </g>
         <g id="gurus">
@@ -166,10 +164,7 @@
                       transform="translate(0 0)"/>
             </g>
             <g class="cls-14">
-                <text class="cls-15" transform="translate(1228.95 324.78)">GU</text>
-                <text class="cls-15" transform="translate(1261.35 324.78)">R</text>
-                <text class="cls-15" transform="translate(1276.53 324.78)">U</text>
-                <text class="cls-15" transform="translate(1292.77 324.78)">S</text>
+                <text class="cls-15" transform="translate(1228.95 324.78)">GURUS</text>
             </g>
         </g>
         <g id="lynchpins">
@@ -234,8 +229,7 @@
                       transform="translate(0 0)"/>
             </g>
             <g class="cls-14">
-                <text class="cls-31" transform="translate(865.66 260.71)">L</text>
-                <text class="cls-15" transform="translate(876.31 260.71)">YNCHPINS</text>
+                <text class="cls-31" transform="translate(865.66 260.71)">LYNCHPINS</text>
             </g>
         </g>
         <g id="geeks">
@@ -490,8 +484,7 @@
             </g>
             <g class="cls-5">
                 <g class="cls-14">
-                    <text class="cls-15" transform="translate(398.08 794.64)">V</text>
-                    <text class="cls-15" transform="translate(413.03 794.64)">OICES</text>
+                    <text class="cls-15" transform="translate(398.08 794.64)">VOICES</text>
                 </g>
             </g>
             <text class="cls-7" transform="translate(332.48 729.48)">4%</text>

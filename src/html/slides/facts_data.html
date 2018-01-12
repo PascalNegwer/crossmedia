@@ -1,0 +1,46 @@
+{% extends "../layouts/slide-with-heading.html" %}
+{% set headline = "DIE Studie" %}
+{% set subheadline = "Woher stammen die Daten?" %}
+
+
+{% block content %}
+<ul class="with-bullets">
+    <li>psychometrische Online-Befragung</li>
+    <li>Aufteilung der Probanden in verschiedene Persönlichkeitstypen</li>
+    <li>auf Basis des DISC-Persönlichkeitsmodell</li>
+</ul>
+<div class="row">
+    <div class="col-md-4">
+        <div class="flipped" id="card1">
+            <div class="front">
+                <img src="assets/svg/facts/card1front.png">
+            </div>
+            <div class="back">
+                <img src="assets/svg/facts/card1back.png">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="flipped" id="card2">
+            <div class="front">
+                <img src="assets/svg/facts/card2front.png">
+            </div>
+            <div class="back">
+                <img src="assets/svg/facts/card2back.png">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="flipped" id="card3">
+            <div class="front">
+                <img src="assets/svg/facts/card3front.png">
+            </div>
+            <div class="back">
+                <img src="assets/svg/facts/card3back.png">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+

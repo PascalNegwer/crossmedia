@@ -1,6 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 303.27 193.55">
     <defs>
-        <style>.cls-90{fill:none;}.cls-91{fill:#312f30;}.cls-92{clip-path:url(#clip-path);}.cls-93{fill:#ccc;}</style>
+        <style>
+            * {pointer-events:none;}
+            .cls-90{fill:none;}
+            .cls-91{fill:#312f30;}
+            .cls-92{clip-path:url(#clip-path);}
+            .cls-93{fill:#ccc;}</style>
         <clipPath id="clip-path">
             <rect class="cls-90" width="303.27" height="193.55"/>
         </clipPath>
