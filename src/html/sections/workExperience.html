@@ -4,7 +4,49 @@
 
 
 {% block content %}
-<h1>Berufserfahrung</h1>
+<div class="row vcenter">
+    <div class="col-md-1">
+        <p><b>Anteil aller befragten Personen</b></p>
+    </div>
+    <div class="col-md-10">
+        <div id="line-chart-container">
+            <canvas id="line-chart" width="400" height="400"></canvas>
+        </div>
+        <div id="workexperience-diversion">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <h5>Verteilung der Berufserfahrungen innerhalb der Geschlechter</h5>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-6"><h6>Frauen</h6></div>
+                <div class="col-md-6"><h6>Männer</h6></div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <canvas id="donut-chart-woman" width="70" height="70"></canvas>
+                </div>
+                <div class="col-md-6">
+                    <canvas id="donut-chart-man" width="70" height="70"></canvas>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <p>
+                        <b><span id="woman-percentage">36</span> %</b> aller Frauen haben
+                        <b><span class="workexperience-years">bis zu einem Jahr</span></b> Berufserfahrung
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <p>
+                        <b><span id="male-percentage">36</span></b> % aller Männer haben
+                        <b><span class="workexperience-years">bis zu einem Jahr</span></b> Berufserfahrung
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 

@@ -4,7 +4,7 @@
   text-align: center
 
   #svg-laptop-close
-    height: 40px
+    height: 30px
     float: right
 
   #svg-personalities-all
@@ -29,6 +29,16 @@
   #laptop-content
     text-align: left
     padding: 30px 30px 0 30px
+
+    #skillset
+      overflow-y: hidden
+      height: 40vh
+      background: linear-gradient(#312f30, #312f30 70%) 0 100%, radial-gradient(40% 0, #b0b5b3, rgba(49, 47, 48, 0.2), rgba(0,0,0,0)),radial-gradient(40% 40%,#C0B9BB,#747071 , #312f30) 0 100%
+      background-repeat: no-repeat
+      background-size: 100% 40px, 100% 40px, 100% 14px, 100% 14px
+      background-attachment: local, local, scroll, scroll
+      &:hover
+        overflow-y: auto
 
     li
       list-style-type: none
