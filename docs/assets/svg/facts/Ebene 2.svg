@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 786.41 315.7">
     <defs>
-        <style>.cls-1,.cls-4{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#ccc;}.cls-4{stroke:#1597b2;stroke-width:8px;}.cls-5{fill:#1597b2;}.cls-6,.cls-7{isolation:isolate;font-size:36px;fill:#fff;font-family:ArialMT, Arial;}.cls-7{letter-spacing:-0.07em;}.cls-8{letter-spacing:-0.02em;}.cls-9{letter-spacing:-0.06em;}</style>
+        <style>.cls-1,.cls-4{fill:none;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#ccc;}.cls-4{stroke:#1597b2;stroke-width:8px;}.cls-5{fill:#1597b2;}.cls-6,.cls-7{isolation:isolate;font-size:36px;fill:#eeeeeb;font-family:'Quicksand';}.cls-7{letter-spacing:-0.07em;}.cls-8{letter-spacing:-0.02em;}.cls-9{letter-spacing:-0.06em;}</style>
         <clipPath id="clip-path" transform="translate(-575.79 -394.3)">
             <rect class="cls-1" width="1938" height="1081"/>
         </clipPath>
@@ -37,14 +37,7 @@
                 <polygon class="cls-5" points="736.41 12 786.41 0 761.41 45 736.41 12"/>
             </g>
             <g class="cls-2">
-                <text class="cls-6" transform="translate(272.22 44.74)">D</text>
-                <text class="cls-7" transform="translate(297.81 44.74)">A
-                    <tspan class="cls-8" x="21.34" y="0">T</tspan>
-                </text>
-                <text class="cls-6" transform="translate(339.82 44.74)">
-                    <tspan class="cls-9">A</tspan>
-                    <tspan x="22.03" y="0" xml:space="preserve"> SCIENCE</tspan>
-                </text>
+                <text class="cls-6" transform="translate(272.22 44.74)">DATA SCIENCE</text>
             </g>
         </g>
     </g>
