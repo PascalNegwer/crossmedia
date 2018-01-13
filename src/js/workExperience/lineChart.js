@@ -56,15 +56,7 @@ function lineChart() {
                     }
                 }],
                 yAxes: [{
-                    display: false,
-                    ticks: {
-                        fontColor: '#eeeeeb'
-                    },
-                    gridLines: {
-                        lineWidth: 3,
-                        display: false,
-                        color: '#eeeeeb'
-                    }
+                    display: false
                 }]
             },
             animation: {
