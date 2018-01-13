@@ -4,7 +4,7 @@ function lineChart() {
         datasets: [{
             //label: 'Dataset 1',
             backgroundColor: '#1597B2',
-            hoverBackgroundColor: "#ffa489",
+            hoverBackgroundColor: '#ef957c',
             borderWidth: 1,
             data: [
                 40,
@@ -42,15 +42,15 @@ function lineChart() {
                 xAxes: [{
                     display: true,
                     ticks: {
-                        fontColor: '#FFFFFF'
+                        fontColor: '#eeeeeb'
                     },
                     gridLines: {
                         lineWidth: 3,
                         display: false,
-                        color: '#FFFFFF'
+                        color: '#eeeeeb'
                     },
                     scaleLabel: {
-                        fontColor: '#FFFFFF',
+                        fontColor: '#eeeeeb',
                         fontSize: '15',
                         display: true,
                         labelString: 'Berufserfahrung in Jahren'
@@ -59,12 +59,12 @@ function lineChart() {
                 yAxes: [{
                     display: true,
                     ticks: {
-                        fontColor: '#FFFFFF'
+                        fontColor: '#eeeeeb'
                     },
                     gridLines: {
                         lineWidth: 3,
                         display: false,
-                        color: '#FFFFFF'
+                        color: '#eeeeeb'
                     }
                 }]
             },
@@ -76,16 +76,28 @@ function lineChart() {
                     Chart.helpers.each(this.data.datasets.forEach(function (dataset, i) {
                         var meta = chartInstance.controller.getDatasetMeta(i);
                         Chart.helpers.each(meta.data.forEach(function (bar, index) {
+                            bar._model.backgroundColor = bar._hover ? '#ef957c' : (bar._active ? '#ffa489' : '#1597B2');
+                            ctx.fillStyle = '#eeeeeb';
+                            ctx.font = "2.5vmin Quicksand";
                             ctx.fillText(dataset.data[index] + ' %', bar._model.x, (chartInstance.height + bar._model.y) * 0.5 - 20);
                         }),this);
                     }),this);
                 }
             },
             onClick: function (ev) {
+                var chartInstance = this.chart;
                 var point = this.getElementAtEvent(ev);
                 var womansPercentage = 0;
                 var malePercentage = 0;
                 var text;
+
+                var meta = chartInstance.controller.getDatasetMeta(0);
+                meta.data.forEach(function (bar, index) {
+                    bar._active = (point[0]._index === index);
+                });
+
+                chartInstance.update();
+
                 switch (point[0]._index) {
                     case 0:
                         womansPercentage = 36;
@@ -120,17 +132,24 @@ function lineChart() {
                 var elements = document.getElementsByClassName('workexperience-years');
 
                 [].forEach.call(elements, function (element) {
-                    console.log(element);
                     element.innerText = text;
                 });
             },
             hover: {
                 onHover: function(e) {
+                    var chartInstance = this.chart;
                     var point = this.getElementAtEvent(e);
+                    var meta = chartInstance.controller.getDatasetMeta(0);
                     if (point.length) {
+                        meta.data.forEach(function (bar, index) {
+                            bar._hover = (point[0]._index === index);
+                        });
                         e.target.style.cursor = 'pointer';
                     } else {
                         e.target.style.cursor = 'default';
+                        meta.data.forEach(function (bar) {
+                            bar._hover = false;
+                        });
                     }
                 }
             }
