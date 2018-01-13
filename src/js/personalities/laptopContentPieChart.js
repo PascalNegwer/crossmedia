@@ -26,41 +26,24 @@ function laptopContentPieChart(women, men, tooltipTitle) {
             },
             animation: {
                 animateScale: true,
-                animateRotate: true
-            },
-            tooltips: {
-                position: 'custom',
-                bodyFontSize: 14,
-                bodySpacing: 2,
-                callbacks: {
-                    label: function(tooltipItem, data) {
-                        //get the concerned dataset
-                        var dataset = data.datasets[tooltipItem.datasetIndex];
-                        //calculate the total of this data set
-                        var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
-                            return previousValue + currentValue;
-                        });
-                        //get the current items value
-                        var currentValue = dataset.data[tooltipItem.index];
-                        //calculate the precentage based on the total and current item, also this does a rough rounding to give a whole number
-                        var precentage = Math.floor(((currentValue/total) * 100)+0.5);
-
-                        return ' ' + precentage + ' % ' + tooltipTitle + ' sind ' + (parseInt(tooltipItem.index) ? 'Männer' : 'Frauen');
-                    }
+                animateRotate: true,
+                onProgress: function () {
+                    var chartInstance = this.chart;
+                    var ctx = chartInstance.ctx;
+                    ctx.textAlign = "center";
+                    var meta = chartInstance.controller.getDatasetMeta(0);
+                    Chart.helpers.each(meta.data.forEach(function (slice, index) {
+                        ctx.fillStyle = '#eeeeeb';
+                        ctx.font = "5vmin Quicksand";
+                        if (index) {
+                            ctx.fillText('\u2642', slice._model.x * 0.5, slice._model.y * 1.5 -10);
+                        } else {
+                            ctx.fillText("\u2640", slice._model.x * 1.5 - 10, slice._model.y * 0.5 -10);
+                        }
+                    }),this);
                 }
             }
         }
-    };
-
-    Chart.Tooltip.positioners.custom = function(elements, eventPosition) {
-        var tooltip = this;
-
-        /* ... */
-
-        return {
-            x: 100,
-            y: 100
-        };
     };
 
     var myPieChart = new Chart(ctx,config);
