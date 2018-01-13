@@ -2,7 +2,6 @@ function lineChart() {
     var barChartData = {
         labels: ['< 1', '1 - 3', '4 - 10', '11 - 20', '20 +'],
         datasets: [{
-            //label: 'Dataset 1',
             backgroundColor: '#1597B2',
             hoverBackgroundColor: '#ef957c',
             borderWidth: 1,
@@ -57,7 +56,7 @@ function lineChart() {
                     }
                 }],
                 yAxes: [{
-                    display: true,
+                    display: false,
                     ticks: {
                         fontColor: '#eeeeeb'
                     },
@@ -90,6 +89,7 @@ function lineChart() {
                 var womansPercentage = 0;
                 var malePercentage = 0;
                 var text;
+                var caseNumber;
 
                 var meta = chartInstance.controller.getDatasetMeta(0);
                 meta.data.forEach(function (bar, index) {
@@ -100,33 +100,38 @@ function lineChart() {
 
                 switch (point[0]._index) {
                     case 0:
+                        caseNumber = 0;
                         womansPercentage = 36;
                         malePercentage = 41;
                         text = 'bis zu einem Jahr';
                         break;
                     case 1:
+                        caseNumber = 1;
                         womansPercentage = 26;
                         malePercentage = 21;
                         text = 'zwischen einem und drei Jahren';
                         break;
                     case 2:
+                        caseNumber = 2;
                         womansPercentage = 24;
                         malePercentage = 22;
                         text = 'zwischen vier und zehn Jahren';
                         break;
                     case 3:
+                        caseNumber = 3;
                         womansPercentage = 11;
                         malePercentage = 12;
                         text = 'zwischen elf und zwanzig Jahren';
                         break;
                     case 4:
+                        caseNumber = 4;
                         womansPercentage = 3;
                         malePercentage = 4;
                         text = 'mehr als zwanzig Jahre';
                         break;
                 }
-                donutCharts.changeWomanData(womansPercentage);
-                donutCharts.changeManData(malePercentage);
+                donutCharts.changeWomanData(caseNumber);
+                donutCharts.changeManData(caseNumber);
                 countUp(document.getElementById('woman-percentage'), womansPercentage);
                 countUp(document.getElementById('male-percentage'), malePercentage);
                 var elements = document.getElementsByClassName('workexperience-years');
@@ -155,6 +160,13 @@ function lineChart() {
             }
         }
     });
+
+    var meta = chart.controller.getDatasetMeta(0);
+    meta.data.forEach(function (bar, index) {
+        bar._active = (0 === index);
+    });
+
+    chart.update();
 
 }
 

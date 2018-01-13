@@ -6,12 +6,18 @@ var donutCharts = (function () {
             datasets: [{
                 backgroundColor: [
                     isMale ? '#1597B2' : '#ffa489',
-                    '#c7c7c7'
+                    '#515151',
+                    '#515151',
+                    '#515151',
+                    '#515151'
                 ],
                 borderWidth: 1,
                 data: [
-                    0,
-                    100
+                    isMale ? 41 : 36,
+                    isMale ? 21 : 26,
+                    isMale ? 22 : 24,
+                    isMale ? 12 : 11,
+                    isMale ? 4 : 3
                 ]
             }]
         },
@@ -22,7 +28,7 @@ var donutCharts = (function () {
                 },
                 legend: {
                     display: false
-                },
+                }
             }
         };
     }
@@ -31,17 +37,23 @@ var donutCharts = (function () {
     var manPie = new Chart(document.getElementById('donut-chart-man'),getConfig(1));
 
     var changeWomanData = function(number) {
-        womanPie.data.datasets[0].data = [
-            number,
-            100 - number
+        womanPie.data.datasets[0].backgroundColor = [
+            number === 0 ? '#ffa489' : '#515151',
+            number === 1 ? '#ffa489' : '#515151',
+            number === 2 ? '#ffa489' : '#515151',
+            number === 3 ? '#ffa489' : '#515151',
+            number === 4 ? '#ffa489' : '#515151'
         ];
         womanPie.update();
     };
 
     var changeManData = function(number) {
-        manPie.data.datasets[0].data = [
-            number,
-            100 - number
+        manPie.data.datasets[0].backgroundColor = [
+            number === 0 ? '#1597B2' : '#515151',
+            number === 1 ? '#1597B2' : '#515151',
+            number === 2 ? '#1597B2' : '#515151',
+            number === 3 ? '#1597B2' : '#515151',
+            number === 4 ? '#1597B2' : '#515151'
         ];
         manPie.update();
     };
