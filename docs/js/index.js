@@ -162,6 +162,95 @@ window.onload = function() {
     });
 }());
 
+var hoverEvents = function() {
+    var svgWomanIsLoaded = false;
+    var svgWoman = document.getElementById('svg-stresslevel-woman');
+    var svgWomanDoc;
+
+    var svgManIsLoaded = false;
+    var svgMan = document.getElementById('svg-stresslevel-man');
+    var svgManDoc;
+
+    var allSvgLoaded = new Event('allSvgLoaded');
+    document.addEventListener('allSvgLoaded', function () {
+        svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+        svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+        svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+        svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+        svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+        svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+    });
+
+    if (svgWoman.contentDocument) {
+        svgWomanDoc = svgWoman.contentDocument;
+        svgWomanIsLoaded = true;
+    }
+
+    if (svgMan.contentDocument) {
+        svgManDoc = svgMan.contentDocument;
+        svgManIsLoaded = true;
+    }
+
+    if (svgWomanIsLoaded && svgManIsLoaded) {
+        document.dispatchEvent(allSvgLoaded);
+    }
+
+    svgWoman.addEventListener("load",function(ev) {
+        svgWomanIsLoaded = true;
+        svgWomanDoc = svgWoman.contentDocument;
+        if (svgWomanIsLoaded && svgManIsLoaded) {
+            document.dispatchEvent(allSvgLoaded);
+        }
+    });
+
+    svgMan.addEventListener("load",function(ev) {
+        svgManIsLoaded = true;
+        svgManDoc = svgMan.contentDocument;
+        if (svgWomanIsLoaded && svgManIsLoaded) {
+            document.dispatchEvent(allSvgLoaded);
+        }
+    });
+
+    function animateHeavy() {
+        setAllFieldsInactive();
+        addActive('man-stressed-heavy', 'woman-stressed-heavy');
+        countUp(svgWomanDoc.getElementById('text'), 30);
+        countUp(svgManDoc.getElementById('text'), 27);
+    }
+
+    function animateMedium() {
+        setAllFieldsInactive();
+        addActive('man-stressed-medium', 'woman-stressed-medium');
+        countUp(svgWomanDoc.getElementById('text'), 23);
+        countUp(svgManDoc.getElementById('text'), 21);
+    }
+
+    function animateLight() {
+        setAllFieldsInactive();
+        addActive('man-stressed-light', 'woman-stressed-light');
+        countUp(svgWomanDoc.getElementById('text'), 47);
+        countUp(svgManDoc.getElementById('text'), 52);
+    }
+
+    function addActive(manFieldName, womanFieldName) {
+        svgWomanDoc.getElementById(womanFieldName).classList.add('active');
+        svgManDoc.getElementById(manFieldName).classList.add('active');
+    }
+
+    function setAllFieldsInactive() {
+        svgWomanDoc.getElementById('woman-stressed-heavy').classList.remove('active');
+        svgWomanDoc.getElementById('woman-stressed-medium').classList.remove('active');
+        svgWomanDoc.getElementById('woman-stressed-light').classList.remove('active');
+        svgManDoc.getElementById('man-stressed-heavy').classList.remove('active');
+        svgManDoc.getElementById('man-stressed-medium').classList.remove('active');
+        svgManDoc.getElementById('man-stressed-light').classList.remove('active');
+    }
+};
+
+document.addEventListener("DOMContentLoaded", function(ev) {
+    hoverEvents();
+});
+
 function getPersonalityData() {
     return [
         {
@@ -499,8 +588,8 @@ function laptopContentPieChart(women, men, tooltipTitle) {
                     men
                 ],
                 backgroundColor: [
-                    '#ffa489',
-                    '#1597B2'
+                    '#4c1816',
+                    '#142241'
                 ]
             }],
             labels: [
@@ -538,95 +627,6 @@ function laptopContentPieChart(women, men, tooltipTitle) {
     var myPieChart = new Chart(ctx,config);
 }
 
-var hoverEvents = function() {
-    var svgWomanIsLoaded = false;
-    var svgWoman = document.getElementById('svg-stresslevel-woman');
-    var svgWomanDoc;
-
-    var svgManIsLoaded = false;
-    var svgMan = document.getElementById('svg-stresslevel-man');
-    var svgManDoc;
-
-    var allSvgLoaded = new Event('allSvgLoaded');
-    document.addEventListener('allSvgLoaded', function () {
-        svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
-        svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
-        svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
-        svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
-        svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
-        svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
-    });
-
-    if (svgWoman.contentDocument) {
-        svgWomanDoc = svgWoman.contentDocument;
-        svgWomanIsLoaded = true;
-    }
-
-    if (svgMan.contentDocument) {
-        svgManDoc = svgMan.contentDocument;
-        svgManIsLoaded = true;
-    }
-
-    if (svgWomanIsLoaded && svgManIsLoaded) {
-        document.dispatchEvent(allSvgLoaded);
-    }
-
-    svgWoman.addEventListener("load",function(ev) {
-        svgWomanIsLoaded = true;
-        svgWomanDoc = svgWoman.contentDocument;
-        if (svgWomanIsLoaded && svgManIsLoaded) {
-            document.dispatchEvent(allSvgLoaded);
-        }
-    });
-
-    svgMan.addEventListener("load",function(ev) {
-        svgManIsLoaded = true;
-        svgManDoc = svgMan.contentDocument;
-        if (svgWomanIsLoaded && svgManIsLoaded) {
-            document.dispatchEvent(allSvgLoaded);
-        }
-    });
-
-    function animateHeavy() {
-        setAllFieldsInactive();
-        addActive('man-stressed-heavy', 'woman-stressed-heavy');
-        countUp(svgWomanDoc.getElementById('text'), 30);
-        countUp(svgManDoc.getElementById('text'), 27);
-    }
-
-    function animateMedium() {
-        setAllFieldsInactive();
-        addActive('man-stressed-medium', 'woman-stressed-medium');
-        countUp(svgWomanDoc.getElementById('text'), 23);
-        countUp(svgManDoc.getElementById('text'), 21);
-    }
-
-    function animateLight() {
-        setAllFieldsInactive();
-        addActive('man-stressed-light', 'woman-stressed-light');
-        countUp(svgWomanDoc.getElementById('text'), 47);
-        countUp(svgManDoc.getElementById('text'), 52);
-    }
-
-    function addActive(manFieldName, womanFieldName) {
-        svgWomanDoc.getElementById(womanFieldName).classList.add('active');
-        svgManDoc.getElementById(manFieldName).classList.add('active');
-    }
-
-    function setAllFieldsInactive() {
-        svgWomanDoc.getElementById('woman-stressed-heavy').classList.remove('active');
-        svgWomanDoc.getElementById('woman-stressed-medium').classList.remove('active');
-        svgWomanDoc.getElementById('woman-stressed-light').classList.remove('active');
-        svgManDoc.getElementById('man-stressed-heavy').classList.remove('active');
-        svgManDoc.getElementById('man-stressed-medium').classList.remove('active');
-        svgManDoc.getElementById('man-stressed-light').classList.remove('active');
-    }
-};
-
-document.addEventListener("DOMContentLoaded", function(ev) {
-    hoverEvents();
-});
-
 var donutCharts = (function () {
     function getConfig(isMale) {
         return {
@@ -634,11 +634,11 @@ var donutCharts = (function () {
                 data: {
             datasets: [{
                 backgroundColor: [
-                    isMale ? '#1597B2' : '#ffa489',
-                    '#515151',
-                    '#515151',
-                    '#515151',
-                    '#515151'
+                    isMale ? '#142241' : '#4c1816',
+                    '#9A9B9F',
+                    '#9A9B9F',
+                    '#9A9B9F',
+                    '#9A9B9F'
                 ],
                 borderWidth: 1,
                 data: [
@@ -667,22 +667,22 @@ var donutCharts = (function () {
 
     var changeWomanData = function(number) {
         womanPie.data.datasets[0].backgroundColor = [
-            number === 0 ? '#ffa489' : '#515151',
-            number === 1 ? '#ffa489' : '#515151',
-            number === 2 ? '#ffa489' : '#515151',
-            number === 3 ? '#ffa489' : '#515151',
-            number === 4 ? '#ffa489' : '#515151'
+            number === 0 ? '#4c1816' : '#9A9B9F',
+            number === 1 ? '#4c1816' : '#9A9B9F',
+            number === 2 ? '#4c1816' : '#9A9B9F',
+            number === 3 ? '#4c1816' : '#9A9B9F',
+            number === 4 ? '#4c1816' : '#9A9B9F'
         ];
         womanPie.update();
     };
 
     var changeManData = function(number) {
         manPie.data.datasets[0].backgroundColor = [
-            number === 0 ? '#1597B2' : '#515151',
-            number === 1 ? '#1597B2' : '#515151',
-            number === 2 ? '#1597B2' : '#515151',
-            number === 3 ? '#1597B2' : '#515151',
-            number === 4 ? '#1597B2' : '#515151'
+            number === 0 ? '#142241' : '#9A9B9F',
+            number === 1 ? '#142241' : '#9A9B9F',
+            number === 2 ? '#142241' : '#9A9B9F',
+            number === 3 ? '#142241' : '#9A9B9F',
+            number === 4 ? '#142241' : '#9A9B9F'
         ];
         manPie.update();
     };
@@ -697,8 +697,8 @@ function lineChart() {
     var barChartData = {
         labels: ['< 1', '1 - 3', '4 - 10', '11 - 20', '20 +'],
         datasets: [{
-            backgroundColor: '#1597B2',
-            hoverBackgroundColor: '#ef957c',
+            backgroundColor: '#9A9B9F',
+            hoverBackgroundColor: '#387572',
             borderWidth: 1,
             data: [
                 40,
@@ -736,6 +736,7 @@ function lineChart() {
                 xAxes: [{
                     display: true,
                     ticks: {
+                        display: true,
                         fontColor: '#eeeeeb'
                     },
                     gridLines: {
@@ -762,7 +763,7 @@ function lineChart() {
                     Chart.helpers.each(this.data.datasets.forEach(function (dataset, i) {
                         var meta = chartInstance.controller.getDatasetMeta(i);
                         Chart.helpers.each(meta.data.forEach(function (bar, index) {
-                            bar._model.backgroundColor = bar._hover ? '#ef957c' : (bar._active ? '#ffa489' : '#1597B2');
+                            bar._model.backgroundColor = bar._hover ? '#387572' : (bar._active ? '#46928F' : '#9A9B9F');
                             ctx.fillStyle = '#eeeeeb';
                             ctx.font = "2.5vmin Quicksand";
                             ctx.fillText(dataset.data[index] + ' %', bar._model.x, (chartInstance.height + bar._model.y) * 0.5 - 20);
