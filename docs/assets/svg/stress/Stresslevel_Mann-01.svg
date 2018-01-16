@@ -3,16 +3,14 @@
 <style type="text/css">
 	*{pointer-events: none;}
 	.st0{fill:#706F6F;}
-	#man-stressed-heavy:hover, #man-stressed-heavy.active {fill:#155872;}
-	#man-stressed-heavy{fill:#5C6872;}
-	#man-stressed-medium:hover, #man-stressed-medium.active {fill:#1597B2;}
-	#man-stressed-medium{fill:#83A2B2;}
-	#man-stressed-light:hover, #man-stressed-light.active {fill:#15BED1;}
-	#man-stressed-light{fill:#abc0c9;}
+	#man-stressed-heavy:hover, #man-stressed-heavy.active {fill:#0A3535;}
+	#man-stressed-heavy{fill:#3f3f3f;}
+	#man-stressed-medium:hover, #man-stressed-medium.active {fill:#0A7D7B;}
+	#man-stressed-medium{fill:#919191;}
+	#man-stressed-light:hover, #man-stressed-light.active {fill:#0AAFAD;}
+	#man-stressed-light{fill:#bcbcbc;}
 	#man-stressed-heavy:hover, #man-stressed-medium:hover, #man-stressed-light:hover
-	{filter:url(#inset-shadow-light); cursor: pointer;}
-	#man-stressed-heavy.active, #man-stressed-medium.active, #man-stressed-light.active
-	{filter:url(#inset-shadow);}
+	{cursor: pointer;}
 	#man-stressed-heavy, #man-stressed-medium, #man-stressed-light
 	{pointer-events: all;}
 	.st4{fill:#442318;}

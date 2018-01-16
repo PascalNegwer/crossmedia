@@ -58,7 +58,7 @@ var fullpage = function () {
         //Design
         controlArrows: true,
         verticalCentered: false, // Linda: geändert auf false da true beim Styling nur Probleme bringt
-        sectionsColor : ['#312F30', '#3E3E3F', '#4B4C4D', '#57585A', '#5c5d5f', '#6b6c6f', '#9d9fa2'],
+        sectionsColor : ['#312F30', '#505154', '#505154', '#505154', '#505154', '#505154', '#9d9fa2'],
         paddingTop: '56px', //Linda: geändert, da hier sonst oben immer ein Rand ist. Navi Heigth in nav.sass auch auf 56px geändert. Beide Werte müssen gleich sein
         paddingBottom: '10px',
         fixedElements: '#header, .footer',
@@ -162,95 +162,238 @@ window.onload = function() {
     });
 }());
 
-var hoverEvents = function() {
-    var svgWomanIsLoaded = false;
-    var svgWoman = document.getElementById('svg-stresslevel-woman');
-    var svgWomanDoc;
-
-    var svgManIsLoaded = false;
-    var svgMan = document.getElementById('svg-stresslevel-man');
-    var svgManDoc;
-
-    var allSvgLoaded = new Event('allSvgLoaded');
-    document.addEventListener('allSvgLoaded', function () {
-        svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
-        svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
-        svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
-        svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
-        svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
-        svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
-    });
-
-    if (svgWoman.contentDocument) {
-        svgWomanDoc = svgWoman.contentDocument;
-        svgWomanIsLoaded = true;
+var donutCharts = (function () {
+    function getConfig(isMale) {
+        return {
+            type: 'pie',
+                data: {
+            datasets: [{
+                backgroundColor: [
+                    isMale ? '#081344' : '#560a0a',
+                    '#9A9B9F',
+                    '#9A9B9F',
+                    '#9A9B9F',
+                    '#9A9B9F'
+                ],
+                borderWidth: 1,
+                data: [
+                    isMale ? 41 : 36,
+                    isMale ? 21 : 26,
+                    isMale ? 22 : 24,
+                    isMale ? 12 : 11,
+                    isMale ? 4 : 3
+                ]
+            }]
+        },
+            options: {
+                cutoutPercentage: 50,
+                tooltips: {
+                    enabled: false
+                },
+                legend: {
+                    display: false
+                }
+            }
+        };
     }
 
-    if (svgMan.contentDocument) {
-        svgManDoc = svgMan.contentDocument;
-        svgManIsLoaded = true;
-    }
+    var womanPie = new Chart(document.getElementById('donut-chart-woman'),getConfig(0));
+    var manPie = new Chart(document.getElementById('donut-chart-man'),getConfig(1));
 
-    if (svgWomanIsLoaded && svgManIsLoaded) {
-        document.dispatchEvent(allSvgLoaded);
-    }
+    var changeWomanData = function(number) {
+        womanPie.data.datasets[0].backgroundColor = [
+            number === 0 ? '#560a0a' : '#9A9B9F',
+            number === 1 ? '#560a0a' : '#9A9B9F',
+            number === 2 ? '#560a0a' : '#9A9B9F',
+            number === 3 ? '#560a0a' : '#9A9B9F',
+            number === 4 ? '#560a0a' : '#9A9B9F'
+        ];
+        womanPie.update();
+    };
 
-    svgWoman.addEventListener("load",function(ev) {
-        svgWomanIsLoaded = true;
-        svgWomanDoc = svgWoman.contentDocument;
-        if (svgWomanIsLoaded && svgManIsLoaded) {
-            document.dispatchEvent(allSvgLoaded);
+    var changeManData = function(number) {
+        manPie.data.datasets[0].backgroundColor = [
+            number === 0 ? '#081344' : '#9A9B9F',
+            number === 1 ? '#081344' : '#9A9B9F',
+            number === 2 ? '#081344' : '#9A9B9F',
+            number === 3 ? '#081344' : '#9A9B9F',
+            number === 4 ? '#081344' : '#9A9B9F'
+        ];
+        manPie.update();
+    };
+
+    return {
+        changeWomanData: changeWomanData,
+        changeManData: changeManData
+    };
+}());
+
+function lineChart() {
+    var barChartData = {
+        labels: ['< 1', '1 - 3', '4 - 10', '11 - 20', '20 +'],
+        datasets: [{
+            backgroundColor: '#9A9B9F',
+            hoverBackgroundColor: '#0A7D7B',
+            borderWidth: 1,
+            data: [
+                40,
+                22,
+                22,
+                12,
+                4
+            ]
+        }]
+
+    };
+
+    var ctx = document.getElementById('line-chart');
+    var chart = new Chart(ctx, {
+        type: 'bar',
+        data: barChartData,
+        options: {
+            responsive: true,
+            tooltips: {
+                enabled: false
+            },
+            layout: {
+                padding: {
+                    left: 0,
+                    right: 50,
+                    top: 100,
+                    bottom: 0
+                }
+            },
+            maintainAspectRatio: false,
+            legend: {
+                display: false
+            },
+            scales: {
+                xAxes: [{
+                    display: true,
+                    ticks: {
+                        display: true,
+                        fontColor: '#eeeeeb'
+                    },
+                    gridLines: {
+                        lineWidth: 3,
+                        display: false,
+                        color: '#505154'
+                    },
+                    scaleLabel: {
+                        fontColor: '#eeeeeb',
+                        fontSize: '15',
+                        display: true,
+                        labelString: 'Berufserfahrung in Jahren'
+                    }
+                }],
+                yAxes: [{
+                    display: false
+                }]
+            },
+            animation: {
+                onProgress: function () {
+                    var chartInstance = this.chart;
+                    var ctx = chartInstance.ctx;
+                    ctx.textAlign = "center";
+                    Chart.helpers.each(this.data.datasets.forEach(function (dataset, i) {
+                        var meta = chartInstance.controller.getDatasetMeta(i);
+                        Chart.helpers.each(meta.data.forEach(function (bar, index) {
+                            bar._model.backgroundColor = bar._hover ? '#0A7D7B' : (bar._active ? '#0A7D7B' : '#9A9B9F');
+                            ctx.fillStyle = '#eeeeeb';
+                            ctx.font = "2.5vmin Quicksand";
+                            ctx.fillText(dataset.data[index] + ' %', bar._model.x, (chartInstance.height + bar._model.y) * 0.5 - 20);
+                        }),this);
+                    }),this);
+                }
+            },
+            onClick: function (ev) {
+                var chartInstance = this.chart;
+                var point = this.getElementAtEvent(ev);
+                var womansPercentage = 0;
+                var malePercentage = 0;
+                var text;
+                var caseNumber;
+
+                var meta = chartInstance.controller.getDatasetMeta(0);
+                meta.data.forEach(function (bar, index) {
+                    bar._active = (point[0]._index === index);
+                });
+
+                chartInstance.update();
+
+                switch (point[0]._index) {
+                    case 0:
+                        caseNumber = 0;
+                        womansPercentage = 36;
+                        malePercentage = 41;
+                        text = 'bis zu einem Jahr';
+                        break;
+                    case 1:
+                        caseNumber = 1;
+                        womansPercentage = 26;
+                        malePercentage = 21;
+                        text = 'zwischen einem und drei Jahren';
+                        break;
+                    case 2:
+                        caseNumber = 2;
+                        womansPercentage = 24;
+                        malePercentage = 22;
+                        text = 'zwischen vier und zehn Jahren';
+                        break;
+                    case 3:
+                        caseNumber = 3;
+                        womansPercentage = 11;
+                        malePercentage = 12;
+                        text = 'zwischen elf und zwanzig Jahren';
+                        break;
+                    case 4:
+                        caseNumber = 4;
+                        womansPercentage = 3;
+                        malePercentage = 4;
+                        text = 'mehr als zwanzig Jahre';
+                        break;
+                }
+                donutCharts.changeWomanData(caseNumber);
+                donutCharts.changeManData(caseNumber);
+                countUp(document.getElementById('woman-percentage'), womansPercentage);
+                countUp(document.getElementById('male-percentage'), malePercentage);
+                var elements = document.getElementsByClassName('workexperience-years');
+
+                [].forEach.call(elements, function (element) {
+                    element.innerText = text;
+                });
+            },
+            hover: {
+                onHover: function(e) {
+                    var chartInstance = this.chart;
+                    var point = this.getElementAtEvent(e);
+                    var meta = chartInstance.controller.getDatasetMeta(0);
+                    if (point.length) {
+                        meta.data.forEach(function (bar, index) {
+                            bar._hover = (point[0]._index === index);
+                        });
+                        e.target.style.cursor = 'pointer';
+                    } else {
+                        e.target.style.cursor = 'default';
+                        meta.data.forEach(function (bar) {
+                            bar._hover = false;
+                        });
+                    }
+                }
+            }
         }
     });
 
-    svgMan.addEventListener("load",function(ev) {
-        svgManIsLoaded = true;
-        svgManDoc = svgMan.contentDocument;
-        if (svgWomanIsLoaded && svgManIsLoaded) {
-            document.dispatchEvent(allSvgLoaded);
-        }
+    var meta = chart.controller.getDatasetMeta(0);
+    meta.data.forEach(function (bar, index) {
+        bar._active = (0 === index);
     });
 
-    function animateHeavy() {
-        setAllFieldsInactive();
-        addActive('man-stressed-heavy', 'woman-stressed-heavy');
-        countUp(svgWomanDoc.getElementById('text'), 30);
-        countUp(svgManDoc.getElementById('text'), 27);
-    }
+    chart.update();
 
-    function animateMedium() {
-        setAllFieldsInactive();
-        addActive('man-stressed-medium', 'woman-stressed-medium');
-        countUp(svgWomanDoc.getElementById('text'), 23);
-        countUp(svgManDoc.getElementById('text'), 21);
-    }
+}
 
-    function animateLight() {
-        setAllFieldsInactive();
-        addActive('man-stressed-light', 'woman-stressed-light');
-        countUp(svgWomanDoc.getElementById('text'), 47);
-        countUp(svgManDoc.getElementById('text'), 52);
-    }
-
-    function addActive(manFieldName, womanFieldName) {
-        svgWomanDoc.getElementById(womanFieldName).classList.add('active');
-        svgManDoc.getElementById(manFieldName).classList.add('active');
-    }
-
-    function setAllFieldsInactive() {
-        svgWomanDoc.getElementById('woman-stressed-heavy').classList.remove('active');
-        svgWomanDoc.getElementById('woman-stressed-medium').classList.remove('active');
-        svgWomanDoc.getElementById('woman-stressed-light').classList.remove('active');
-        svgManDoc.getElementById('man-stressed-heavy').classList.remove('active');
-        svgManDoc.getElementById('man-stressed-medium').classList.remove('active');
-        svgManDoc.getElementById('man-stressed-light').classList.remove('active');
-    }
-};
-
-document.addEventListener("DOMContentLoaded", function(ev) {
-    hoverEvents();
-});
-
+lineChart();
 function getPersonalityData() {
     return [
         {
@@ -588,8 +731,8 @@ function laptopContentPieChart(women, men, tooltipTitle) {
                     men
                 ],
                 backgroundColor: [
-                    '#4c1816',
-                    '#142241'
+                    '#560a0a',
+                    '#081344'
                 ]
             }],
             labels: [
@@ -605,21 +748,6 @@ function laptopContentPieChart(women, men, tooltipTitle) {
             animation: {
                 animateScale: true,
                 animateRotate: true,
-                onProgress: function () {
-                    var chartInstance = this.chart;
-                    var ctx = chartInstance.ctx;
-                    ctx.textAlign = "center";
-                    var meta = chartInstance.controller.getDatasetMeta(0);
-                    Chart.helpers.each(meta.data.forEach(function (slice, index) {
-                        ctx.fillStyle = '#eeeeeb';
-                        ctx.font = "5vmin Quicksand";
-                        if (index) {
-                            ctx.fillText('\u2642', slice._model.x * 0.5, slice._model.y * 1.5 -10);
-                        } else {
-                            ctx.fillText("\u2640", slice._model.x * 1.5 - 10, slice._model.y * 0.5 -10);
-                        }
-                    }),this);
-                }
             }
         }
     };
@@ -627,235 +755,91 @@ function laptopContentPieChart(women, men, tooltipTitle) {
     var myPieChart = new Chart(ctx,config);
 }
 
-var donutCharts = (function () {
-    function getConfig(isMale) {
-        return {
-            type: 'pie',
-                data: {
-            datasets: [{
-                backgroundColor: [
-                    isMale ? '#142241' : '#4c1816',
-                    '#9A9B9F',
-                    '#9A9B9F',
-                    '#9A9B9F',
-                    '#9A9B9F'
-                ],
-                borderWidth: 1,
-                data: [
-                    isMale ? 41 : 36,
-                    isMale ? 21 : 26,
-                    isMale ? 22 : 24,
-                    isMale ? 12 : 11,
-                    isMale ? 4 : 3
-                ]
-            }]
-        },
-            options: {
-                cutoutPercentage: 50,
-                tooltips: {
-                    enabled: false
-                },
-                legend: {
-                    display: false
-                }
-            }
-        };
+var hoverEvents = function() {
+    var svgWomanIsLoaded = false;
+    var svgWoman = document.getElementById('svg-stresslevel-woman');
+    var svgWomanDoc;
+
+    var svgManIsLoaded = false;
+    var svgMan = document.getElementById('svg-stresslevel-man');
+    var svgManDoc;
+
+    var allSvgLoaded = new Event('allSvgLoaded');
+    document.addEventListener('allSvgLoaded', function () {
+        svgWomanDoc.getElementById('woman-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+        svgWomanDoc.getElementById('woman-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+        svgWomanDoc.getElementById('woman-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+        svgManDoc.getElementById('man-stressed-heavy').addEventListener('click', function (ev) { animateHeavy(); });
+        svgManDoc.getElementById('man-stressed-medium').addEventListener('click', function (ev) { animateMedium(); });
+        svgManDoc.getElementById('man-stressed-light').addEventListener('click', function (ev) { animateLight(); });
+    });
+
+    if (svgWoman.contentDocument) {
+        svgWomanDoc = svgWoman.contentDocument;
+        svgWomanIsLoaded = true;
     }
 
-    var womanPie = new Chart(document.getElementById('donut-chart-woman'),getConfig(0));
-    var manPie = new Chart(document.getElementById('donut-chart-man'),getConfig(1));
+    if (svgMan.contentDocument) {
+        svgManDoc = svgMan.contentDocument;
+        svgManIsLoaded = true;
+    }
 
-    var changeWomanData = function(number) {
-        womanPie.data.datasets[0].backgroundColor = [
-            number === 0 ? '#4c1816' : '#9A9B9F',
-            number === 1 ? '#4c1816' : '#9A9B9F',
-            number === 2 ? '#4c1816' : '#9A9B9F',
-            number === 3 ? '#4c1816' : '#9A9B9F',
-            number === 4 ? '#4c1816' : '#9A9B9F'
-        ];
-        womanPie.update();
-    };
+    if (svgWomanIsLoaded && svgManIsLoaded) {
+        document.dispatchEvent(allSvgLoaded);
+    }
 
-    var changeManData = function(number) {
-        manPie.data.datasets[0].backgroundColor = [
-            number === 0 ? '#142241' : '#9A9B9F',
-            number === 1 ? '#142241' : '#9A9B9F',
-            number === 2 ? '#142241' : '#9A9B9F',
-            number === 3 ? '#142241' : '#9A9B9F',
-            number === 4 ? '#142241' : '#9A9B9F'
-        ];
-        manPie.update();
-    };
-
-    return {
-        changeWomanData: changeWomanData,
-        changeManData: changeManData
-    };
-}());
-
-function lineChart() {
-    var barChartData = {
-        labels: ['< 1', '1 - 3', '4 - 10', '11 - 20', '20 +'],
-        datasets: [{
-            backgroundColor: '#9A9B9F',
-            hoverBackgroundColor: '#387572',
-            borderWidth: 1,
-            data: [
-                40,
-                22,
-                22,
-                12,
-                4
-            ]
-        }]
-
-    };
-
-    var ctx = document.getElementById('line-chart');
-    var chart = new Chart(ctx, {
-        type: 'bar',
-        data: barChartData,
-        options: {
-            responsive: true,
-            tooltips: {
-                enabled: false
-            },
-            layout: {
-                padding: {
-                    left: 0,
-                    right: 50,
-                    top: 100,
-                    bottom: 0
-                }
-            },
-            maintainAspectRatio: false,
-            legend: {
-                display: false
-            },
-            scales: {
-                xAxes: [{
-                    display: true,
-                    ticks: {
-                        display: true,
-                        fontColor: '#eeeeeb'
-                    },
-                    gridLines: {
-                        lineWidth: 3,
-                        display: false,
-                        color: '#eeeeeb'
-                    },
-                    scaleLabel: {
-                        fontColor: '#eeeeeb',
-                        fontSize: '15',
-                        display: true,
-                        labelString: 'Berufserfahrung in Jahren'
-                    }
-                }],
-                yAxes: [{
-                    display: false
-                }]
-            },
-            animation: {
-                onProgress: function () {
-                    var chartInstance = this.chart;
-                    var ctx = chartInstance.ctx;
-                    ctx.textAlign = "center";
-                    Chart.helpers.each(this.data.datasets.forEach(function (dataset, i) {
-                        var meta = chartInstance.controller.getDatasetMeta(i);
-                        Chart.helpers.each(meta.data.forEach(function (bar, index) {
-                            bar._model.backgroundColor = bar._hover ? '#387572' : (bar._active ? '#46928F' : '#9A9B9F');
-                            ctx.fillStyle = '#eeeeeb';
-                            ctx.font = "2.5vmin Quicksand";
-                            ctx.fillText(dataset.data[index] + ' %', bar._model.x, (chartInstance.height + bar._model.y) * 0.5 - 20);
-                        }),this);
-                    }),this);
-                }
-            },
-            onClick: function (ev) {
-                var chartInstance = this.chart;
-                var point = this.getElementAtEvent(ev);
-                var womansPercentage = 0;
-                var malePercentage = 0;
-                var text;
-                var caseNumber;
-
-                var meta = chartInstance.controller.getDatasetMeta(0);
-                meta.data.forEach(function (bar, index) {
-                    bar._active = (point[0]._index === index);
-                });
-
-                chartInstance.update();
-
-                switch (point[0]._index) {
-                    case 0:
-                        caseNumber = 0;
-                        womansPercentage = 36;
-                        malePercentage = 41;
-                        text = 'bis zu einem Jahr';
-                        break;
-                    case 1:
-                        caseNumber = 1;
-                        womansPercentage = 26;
-                        malePercentage = 21;
-                        text = 'zwischen einem und drei Jahren';
-                        break;
-                    case 2:
-                        caseNumber = 2;
-                        womansPercentage = 24;
-                        malePercentage = 22;
-                        text = 'zwischen vier und zehn Jahren';
-                        break;
-                    case 3:
-                        caseNumber = 3;
-                        womansPercentage = 11;
-                        malePercentage = 12;
-                        text = 'zwischen elf und zwanzig Jahren';
-                        break;
-                    case 4:
-                        caseNumber = 4;
-                        womansPercentage = 3;
-                        malePercentage = 4;
-                        text = 'mehr als zwanzig Jahre';
-                        break;
-                }
-                donutCharts.changeWomanData(caseNumber);
-                donutCharts.changeManData(caseNumber);
-                countUp(document.getElementById('woman-percentage'), womansPercentage);
-                countUp(document.getElementById('male-percentage'), malePercentage);
-                var elements = document.getElementsByClassName('workexperience-years');
-
-                [].forEach.call(elements, function (element) {
-                    element.innerText = text;
-                });
-            },
-            hover: {
-                onHover: function(e) {
-                    var chartInstance = this.chart;
-                    var point = this.getElementAtEvent(e);
-                    var meta = chartInstance.controller.getDatasetMeta(0);
-                    if (point.length) {
-                        meta.data.forEach(function (bar, index) {
-                            bar._hover = (point[0]._index === index);
-                        });
-                        e.target.style.cursor = 'pointer';
-                    } else {
-                        e.target.style.cursor = 'default';
-                        meta.data.forEach(function (bar) {
-                            bar._hover = false;
-                        });
-                    }
-                }
-            }
+    svgWoman.addEventListener("load",function(ev) {
+        svgWomanIsLoaded = true;
+        svgWomanDoc = svgWoman.contentDocument;
+        if (svgWomanIsLoaded && svgManIsLoaded) {
+            document.dispatchEvent(allSvgLoaded);
         }
     });
 
-    var meta = chart.controller.getDatasetMeta(0);
-    meta.data.forEach(function (bar, index) {
-        bar._active = (0 === index);
+    svgMan.addEventListener("load",function(ev) {
+        svgManIsLoaded = true;
+        svgManDoc = svgMan.contentDocument;
+        if (svgWomanIsLoaded && svgManIsLoaded) {
+            document.dispatchEvent(allSvgLoaded);
+        }
     });
 
-    chart.update();
+    function animateHeavy() {
+        setAllFieldsInactive();
+        addActive('man-stressed-heavy', 'woman-stressed-heavy');
+        countUp(svgWomanDoc.getElementById('text'), 30);
+        countUp(svgManDoc.getElementById('text'), 27);
+    }
 
-}
+    function animateMedium() {
+        setAllFieldsInactive();
+        addActive('man-stressed-medium', 'woman-stressed-medium');
+        countUp(svgWomanDoc.getElementById('text'), 23);
+        countUp(svgManDoc.getElementById('text'), 21);
+    }
 
-lineChart();
+    function animateLight() {
+        setAllFieldsInactive();
+        addActive('man-stressed-light', 'woman-stressed-light');
+        countUp(svgWomanDoc.getElementById('text'), 47);
+        countUp(svgManDoc.getElementById('text'), 52);
+    }
+
+    function addActive(manFieldName, womanFieldName) {
+        svgWomanDoc.getElementById(womanFieldName).classList.add('active');
+        svgManDoc.getElementById(manFieldName).classList.add('active');
+    }
+
+    function setAllFieldsInactive() {
+        svgWomanDoc.getElementById('woman-stressed-heavy').classList.remove('active');
+        svgWomanDoc.getElementById('woman-stressed-medium').classList.remove('active');
+        svgWomanDoc.getElementById('woman-stressed-light').classList.remove('active');
+        svgManDoc.getElementById('man-stressed-heavy').classList.remove('active');
+        svgManDoc.getElementById('man-stressed-medium').classList.remove('active');
+        svgManDoc.getElementById('man-stressed-light').classList.remove('active');
+    }
+};
+
+document.addEventListener("DOMContentLoaded", function(ev) {
+    hoverEvents();
+});

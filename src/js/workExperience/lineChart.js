@@ -3,7 +3,7 @@ function lineChart() {
         labels: ['< 1', '1 - 3', '4 - 10', '11 - 20', '20 +'],
         datasets: [{
             backgroundColor: '#9A9B9F',
-            hoverBackgroundColor: '#387572',
+            hoverBackgroundColor: '#0A7D7B',
             borderWidth: 1,
             data: [
                 40,
@@ -47,7 +47,7 @@ function lineChart() {
                     gridLines: {
                         lineWidth: 3,
                         display: false,
-                        color: '#eeeeeb'
+                        color: '#505154'
                     },
                     scaleLabel: {
                         fontColor: '#eeeeeb',
@@ -68,7 +68,7 @@ function lineChart() {
                     Chart.helpers.each(this.data.datasets.forEach(function (dataset, i) {
                         var meta = chartInstance.controller.getDatasetMeta(i);
                         Chart.helpers.each(meta.data.forEach(function (bar, index) {
-                            bar._model.backgroundColor = bar._hover ? '#387572' : (bar._active ? '#46928F' : '#9A9B9F');
+                            bar._model.backgroundColor = bar._hover ? '#0A7D7B' : (bar._active ? '#0A7D7B' : '#9A9B9F');
                             ctx.fillStyle = '#eeeeeb';
                             ctx.font = "2.5vmin Quicksand";
                             ctx.fillText(dataset.data[index] + ' %', bar._model.x, (chartInstance.height + bar._model.y) * 0.5 - 20);

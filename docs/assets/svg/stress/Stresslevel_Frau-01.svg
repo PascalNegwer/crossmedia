@@ -3,16 +3,14 @@
 <style type="text/css">
 	*{pointer-events: none;}
 	.st0{fill:#706F6F;}
-	#woman-stressed-heavy:hover, #woman-stressed-heavy.active {fill:#155872;}
-	#woman-stressed-heavy{fill:#5C6872;}
-	#woman-stressed-medium:hover, #woman-stressed-medium.active {fill:#1597B2;}
-	#woman-stressed-medium{fill:#83A2B2;}
-	#woman-stressed-light:hover, #woman-stressed-light.active {fill:#15BED1;}
-	#woman-stressed-light{fill:#abc0c9;}
+	#woman-stressed-heavy:hover, #woman-stressed-heavy.active {fill:#0A3535;}
+	#woman-stressed-heavy{fill:#3f3f3f;}
+	#woman-stressed-medium:hover, #woman-stressed-medium.active {fill:#0A7D7B;}
+	#woman-stressed-medium{fill:#919191;}
+	#woman-stressed-light:hover, #woman-stressed-light.active {fill:#0AAFAD;}
+	#woman-stressed-light{fill:#bcbcbc;}
 	#woman-stressed-heavy:hover, #woman-stressed-medium:hover, #woman-stressed-light:hover
-	{filter:url(#inset-shadow-light);cursor:pointer;}
-	#woman-stressed-heavy.active, #woman-stressed-medium.active, #woman-stressed-light.active
-	{filter:url(#inset-shadow);}
+	{cursor:pointer;}
 	#woman-stressed-heavy, #woman-stressed-medium, #woman-stressed-light
 	{pointer-events: all;}
 	.st4{fill:#E72687;}
@@ -25,34 +23,6 @@
 	.st11{font-family:'Quicksand';}
 	.st12{font-size:123.0757px;}
 </style>
-<filter id="inset-shadow" x="-50%" y="-50%" width="200%" height="200%">
-		<feComponentTransfer in="SourceAlpha">
-		  <feFuncA type="table" tableValues="0.8 0" />
-		</feComponentTransfer>
-		<feGaussianBlur stdDeviation="10"/>
-		<feOffset dx="0" dy="0" result="offsetblur"/>
-		<feFlood flood-color="rgb(60, 60, 60)" result="color"/>
-		<feComposite in2="offsetblur" operator="in"/>
-		<feComposite in2="SourceAlpha" operator="in" />
-		<feMerge>
-		  <feMergeNode in="SourceGraphic" />
-		  <feMergeNode />
-		</feMerge>
-	  </filter>
-	<filter id="inset-shadow-light" x="-50%" y="-50%" width="200%" height="200%">
-		<feComponentTransfer in="SourceAlpha">
-		  <feFuncA type="table" tableValues="0.8 0" />
-		</feComponentTransfer>
-		<feGaussianBlur stdDeviation="10"/>
-		<feOffset dx="0" dy="0" result="offsetblur"/>
-		<feFlood flood-color="rgb(150, 150, 150)" result="color"/>
-		<feComposite in2="offsetblur" operator="in"/>
-		<feComposite in2="SourceAlpha" operator="in" />
-		<feMerge>
-		  <feMergeNode in="SourceGraphic" />
-		  <feMergeNode />
-		</feMerge>
-	  </filter>
 <path class="st9" d="M34.2,256.7c-10.5,32.4-16.2,67-16.2,103s5.7,70.5,16.2,103l317-103L34.2,256.7z"/>
 <path class="st9" d="M155.4,90.2c-56.2,40.9-99.2,99-121.1,166.6l317,103L155.4,90.2z"/>
 <path class="st9" d="M34.2,462.7c21.9,67.5,64.9,125.6,121.1,166.6l195.9-269.5L34.2,462.7z"/>
@@ -100,7 +70,7 @@
 		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
 	</clipPath>
 	<g class="st10">
-		<text transform="matrix(1 0 0 1 300.0542 406.0099)" class="st0 st11 st12" text-anchor="end" id="text">47</text>
+		<text transform="matrix(1 0 0 1 310.0542 406.0099)" class="st0 st11 st12" text-anchor="end" id="text">47</text>
 		<text transform="matrix(1 0 0 1 305.0542 406.0099)" class="st0 st11 st12"> %</text>
 	</g>
 </g>

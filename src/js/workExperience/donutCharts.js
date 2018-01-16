@@ -5,7 +5,7 @@ var donutCharts = (function () {
                 data: {
             datasets: [{
                 backgroundColor: [
-                    isMale ? '#142241' : '#4c1816',
+                    isMale ? '#081344' : '#560a0a',
                     '#9A9B9F',
                     '#9A9B9F',
                     '#9A9B9F',
@@ -38,22 +38,22 @@ var donutCharts = (function () {
 
     var changeWomanData = function(number) {
         womanPie.data.datasets[0].backgroundColor = [
-            number === 0 ? '#4c1816' : '#9A9B9F',
-            number === 1 ? '#4c1816' : '#9A9B9F',
-            number === 2 ? '#4c1816' : '#9A9B9F',
-            number === 3 ? '#4c1816' : '#9A9B9F',
-            number === 4 ? '#4c1816' : '#9A9B9F'
+            number === 0 ? '#560a0a' : '#9A9B9F',
+            number === 1 ? '#560a0a' : '#9A9B9F',
+            number === 2 ? '#560a0a' : '#9A9B9F',
+            number === 3 ? '#560a0a' : '#9A9B9F',
+            number === 4 ? '#560a0a' : '#9A9B9F'
         ];
         womanPie.update();
     };
 
     var changeManData = function(number) {
         manPie.data.datasets[0].backgroundColor = [
-            number === 0 ? '#142241' : '#9A9B9F',
-            number === 1 ? '#142241' : '#9A9B9F',
-            number === 2 ? '#142241' : '#9A9B9F',
-            number === 3 ? '#142241' : '#9A9B9F',
-            number === 4 ? '#142241' : '#9A9B9F'
+            number === 0 ? '#081344' : '#9A9B9F',
+            number === 1 ? '#081344' : '#9A9B9F',
+            number === 2 ? '#081344' : '#9A9B9F',
+            number === 3 ? '#081344' : '#9A9B9F',
+            number === 4 ? '#081344' : '#9A9B9F'
         ];
         manPie.update();
     };

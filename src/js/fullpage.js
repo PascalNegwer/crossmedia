@@ -47,7 +47,7 @@ var fullpage = function () {
         //Design
         controlArrows: true,
         verticalCentered: false, // Linda: geändert auf false da true beim Styling nur Probleme bringt
-        sectionsColor : ['#312F30', '#3E3E3F', '#4B4C4D', '#57585A', '#5c5d5f', '#6b6c6f', '#9d9fa2'],
+        sectionsColor : ['#312F30', '#505154', '#505154', '#505154', '#505154', '#505154', '#9d9fa2'],
         paddingTop: '56px', //Linda: geändert, da hier sonst oben immer ein Rand ist. Navi Heigth in nav.sass auch auf 56px geändert. Beide Werte müssen gleich sein
         paddingBottom: '10px',
         fixedElements: '#header, .footer',
