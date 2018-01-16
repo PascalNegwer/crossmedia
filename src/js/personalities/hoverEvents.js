@@ -56,13 +56,15 @@ var hoverEventsPersonalities = function() {
                 document.getElementById('laptop-content').innerHTML =
                     '<object id="svg-geek" class="single-personality" type="image/svg+xml" data="assets/svg/personalities/' + el.name + '.svg"></object>' +
                     '<object id="svg-laptop-close" class="pull-right" type="image/svg+xml" data="assets/svg/closeButton.svg"></object>' +
-                    '<h1>' + el.title + '</h1>' +
+                    '<h2>' + el.title + '</h2><h5>' + el.overall + ' % aller Befragten </h5>' +
                     '<hr/>' +
                     '<div class="row">' +
                     '    <div class="col-md-6">' +
-                    '        <canvas id="pieChart" width="10%" height="10%"></canvas>' +
+                    '       <h5>Verteilung nach Geschlecht</h5>' +
+                    '       <canvas id="pieChart" width="10%" height="10%"></canvas>' +
                     '    </div>' +
-                    '    <div id="skillset" class="col-md-6">' + skills +
+                    '    <div id="skillset" class="col-md-6">' +
+                    '       ' + skills +
                     '    </div>' +
                     '</div>';
 

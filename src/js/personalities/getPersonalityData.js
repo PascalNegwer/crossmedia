@@ -6,6 +6,7 @@ function getPersonalityData() {
             'tooltipTitle': 'der Cruncher',
             'x': '-260',
             'y': '-80',
+            'overall': 13,
             'women': 15.5,
             'men': 84.5,
             'skills': [
@@ -32,6 +33,7 @@ function getPersonalityData() {
             'tooltipTitle': 'der Gurus',
             'x': '-200',
             'y': '-40',
+            'overall': 10,
             'women': 26.4,
             'men': 73.6,
             'skills': [
@@ -60,6 +62,7 @@ function getPersonalityData() {
             'tooltipTitle': 'der weiteren Profile',
             'x': '-200',
             'y': '-120',
+            'overall': 2,
             'women': 18,
             'men': 82,
             'skills': [
@@ -95,6 +98,7 @@ function getPersonalityData() {
             'tooltipTitle': 'der Lynchpins',
             'x': '-150',
             'y': '-40',
+            'overall': 3,
             'women': 28,
             'men': 72,
             'skills': [
@@ -121,6 +125,7 @@ function getPersonalityData() {
             'tooltipTitle': 'der Geeks',
             'x': '-100',
             'y': '-20',
+            'overall': 37,
             'women': 22.5,
             'men': 77.5,
             'skills': [
@@ -151,6 +156,7 @@ function getPersonalityData() {
             'tooltipTitle': 'der Driver',
             'x': '-60',
             'y': '-40',
+            'overall': 14,
             'women': 18,
             'men': 82,
             'skills': [
@@ -177,6 +183,7 @@ function getPersonalityData() {
             'tooltipTitle': 'der Deliverer',
             'x': '-10',
             'y': '-80',
+            'overall': 17,
             'women': 24,
             'men': 76,
             'skills': [
@@ -202,6 +209,7 @@ function getPersonalityData() {
             'tooltipTitle': 'der Voices',
             'x': '-70',
             'y': '-120',
+            'overall': 4,
             'women': 41,
             'men': 59,
             'skills': [
