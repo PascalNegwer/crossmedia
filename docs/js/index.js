@@ -200,7 +200,7 @@ function getPersonalityData() {
                 {
                     'title': 'Eigenschaften',
                     'points': [
-                        'Zurückhaltendste Gruppe',
+                        'zurückhaltendste Gruppe',
                         'überwiegend reaktive Persönlichkeiten',
                         'mögen Routine und Beständigkeit',
                         'hohe technische Kompetenz und Konstanz'
@@ -209,7 +209,7 @@ function getPersonalityData() {
                 {
                     'title': 'Einsatzgebiete',
                     'points': [
-                        'Technische Aufgaben wie Datenaufbereitung, -analyse, -monitoring, Qualitätskontrolle'
+                        'technische Aufgaben wie Datenaufbereitung, Datenanalyse, Datenmonitoring, Qualitätskontrolle'
                     ]
                 }
             ]
@@ -227,7 +227,7 @@ function getPersonalityData() {
                 {
                     'title': 'Eigenschaften',
                     'points': [
-                        'Hohes Maß an Introvertiertheit',
+                        'hohes Maß an Introvertiertheit',
                         'besonderes Interesse an wissenschaftlichen und technischen Themen',
                         'starke proaktive Extrovertiertheit',
                         'Kommunikationsstärke',
@@ -238,7 +238,7 @@ function getPersonalityData() {
                 {
                     'title': 'Einsatzgebiete',
                     'points': [
-                        'Entscheider von Vorteilen der Data Science überzeugen'
+                        'Überzeugungsarbeit bei Entscheidern leisten'
                     ]
                 }
             ]
@@ -256,25 +256,27 @@ function getPersonalityData() {
                 {
                     'title': 'Ground Breaker',
                     'points': [
-                        'bieten neue Ansätze, Methoden und Möglichkeiten, die sie aus einem Mix aus Inspiration und streng logischem Denken ziehen'
+                        'bieten neue Ansätze, Methoden und Möglichkeiten, die sie anhand von Inspirationen und streng logischem Denken bestimmen'
                     ]
                 },
                 {
                     'title': 'Seeker',
                     'points': [
-                        'kombinieren hervorragendes technisches Knowhow mit Wissbegierde, die sie antreibt, nach Lösungen zu suchen. Zu finden beispielsweise in der Forschung'
+                        'kombinieren hervorragendes technisches Knowhow mit Wissbegierde, die sie antreibt, nach Lösungen zu suchen',
+                        'Einsatzgebiete: Beispielsweise in der Forschung'
                     ]
                 },
                 {
                     'title': 'Teacher',
                     'points': [
-                        'sind gut im Teilen von Informationen und darin, andere zum Lernen zu bewegen. Mögliche Rollen umfassen Ausbildung und Mentoring'
+                        'sind gut im Teilen von Informationen und darin, andere zum Lernen zu bewegen',
+                        'Einsatzgebiete: Ausbildung und Mentoring'
                     ]
                 },
                 {
-                    'title': '',
+                    'title': 'Entwicklung',
                     'points': [
-                        'durch technologischen Weiterentwicklung wird möglicherweise immer weniger Gewicht auf technische Charaktereigenschaften gelegt, während seltenere Profile wie die Ground Breaker, Teacher oder Seeker an Bedeutung gewinnen.'
+                        'Durch technologische Weiterentwicklung wird möglicherweise immer weniger Gewicht auf technische Charaktereigenschaften gelegt, während seltenere Profile wie die Ground Breaker, Teacher oder Seeker an Bedeutung gewinnen.'
                     ]
                 }
             ]
@@ -350,7 +352,7 @@ function getPersonalityData() {
                 {
                     'title': 'Eigenschaften',
                     'points': [
-                        'Proaktive Introvertierte',
+                        'proaktive Introvertierte',
                         'hochgradig pragmatisch',
                         'starke Konzentration auf Zielumsetzung, Überwachung und Priorisierung',
                         'bringen Aufträge erfolgreich zum Abschluss'
@@ -359,7 +361,7 @@ function getPersonalityData() {
                 {
                     'title': 'Einsatzgebiete',
                     'points': [
-                        'Ideale Projektmanager und Teamleiter durch Selbstbewusstsein und Ergebnisorientiertheit'
+                        'ideale Projektmanager und Teamleiter durch Selbstbewusstsein und Ergebnisorientiertheit'
                     ]
                 }
             ]
@@ -403,9 +405,9 @@ function getPersonalityData() {
                 {
                     'title': 'Eigenschaften',
                     'points': [
-                        'Kommunikationsstarke Menschen',
+                        'kommunikationsstarke Menschen',
                         'weniger technisches Wissen als Gurus',
-                        'Können andere auf weniger technischen Ebene für Potenzial von Big Data und Data Science begeistern',
+                        'können andere auf weniger technischen Ebene für Potenzial von Big Data und Data Science begeistern',
                         'positive Ansichtsweise'
                     ]
                 },
