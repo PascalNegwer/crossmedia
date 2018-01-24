@@ -21,6 +21,7 @@ function lineChart() {
         type: 'bar',
         data: barChartData,
         options: {
+            scaleFontStyle: 'normal',
             responsive: true,
             tooltips: {
                 enabled: false
@@ -42,6 +43,7 @@ function lineChart() {
                     display: true,
                     ticks: {
                         display: true,
+                        fontSize: '18',
                         fontColor: '#eeeeeb'
                     },
                     gridLines: {
@@ -51,10 +53,12 @@ function lineChart() {
                     },
                     scaleLabel: {
                         fontColor: '#eeeeeb',
-                        fontSize: '15',
+                        fontWeight: 200,
+                        fontSize: '20',
                         display: true,
                         labelString: 'Berufserfahrung in Jahren'
-                    }
+                    },
+                    scaleFontStyle: 'normal'
                 }],
                 yAxes: [{
                     display: false
@@ -70,8 +74,8 @@ function lineChart() {
                         Chart.helpers.each(meta.data.forEach(function (bar, index) {
                             bar._model.backgroundColor = bar._hover ? '#0A7D7B' : (bar._active ? '#0A7D7B' : '#9A9B9F');
                             ctx.fillStyle = '#eeeeeb';
-                            ctx.font = "2.5vmin Quicksand";
-                            ctx.fillText(dataset.data[index] + ' %', bar._model.x, (chartInstance.height + bar._model.y) * 0.5 - 20);
+                            ctx.font = "2.8vmin Quicksand";
+                            ctx.fillText(dataset.data[index] + ' \uFE6A  ', bar._model.x, (chartInstance.height + bar._model.y) * 0.5 - 20);
                         }),this);
                     }),this);
                 }

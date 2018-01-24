@@ -146,6 +146,22 @@ window.onload = function() {
     css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid }";
     document.body.appendChild(css);
 };
+(function () {
+
+    $("#card1").flip({
+        axis: 'y',
+        trigger: 'hover'
+    });
+    $("#card2").flip({
+        axis: 'y',
+        trigger: 'hover'
+    });
+    $("#card3").flip({
+        axis: 'y',
+        trigger: 'hover'
+    });
+}());
+
 function getPersonalityData() {
     return [
         {
@@ -510,6 +526,26 @@ function laptopContentPieChart(women, men, tooltipTitle) {
             animation: {
                 animateScale: true,
                 animateRotate: true,
+            },
+            tooltips: {
+                bodyFontSize: 20,
+                bodySpacing: 2,
+                callbacks: {
+                    label: function(tooltipItem, data) {
+                        //get the concerned dataset
+                        var dataset = data.datasets[tooltipItem.datasetIndex];
+                        //calculate the total of this data set
+                        var total = dataset.data.reduce(function(previousValue, currentValue, currentIndex, array) {
+                            return previousValue + currentValue;
+                        });
+                        //get the current items value
+                        var currentValue = dataset.data[tooltipItem.index];
+                        //calculate the precentage based on the total and current item, also this does a rough rounding to give a whole number
+                        var precentage = Math.floor(((currentValue/total) * 100)+0.5);
+
+                        return ' ' + precentage + ' % ' + (parseInt(tooltipItem.index) ? 'Männer' : 'Frauen');
+                    }
+                }
             }
         }
     };
@@ -606,22 +642,6 @@ document.addEventListener("DOMContentLoaded", function(ev) {
     hoverEvents();
 });
 
-(function () {
-
-    $("#card1").flip({
-        axis: 'y',
-        trigger: 'hover'
-    });
-    $("#card2").flip({
-        axis: 'y',
-        trigger: 'hover'
-    });
-    $("#card3").flip({
-        axis: 'y',
-        trigger: 'hover'
-    });
-}());
-
 var donutCharts = (function () {
     function getConfig(isMale) {
         return {
@@ -711,6 +731,7 @@ function lineChart() {
         type: 'bar',
         data: barChartData,
         options: {
+            scaleFontStyle: 'normal',
             responsive: true,
             tooltips: {
                 enabled: false
@@ -732,6 +753,7 @@ function lineChart() {
                     display: true,
                     ticks: {
                         display: true,
+                        fontSize: '18',
                         fontColor: '#eeeeeb'
                     },
                     gridLines: {
@@ -741,10 +763,12 @@ function lineChart() {
                     },
                     scaleLabel: {
                         fontColor: '#eeeeeb',
-                        fontSize: '15',
+                        fontWeight: 200,
+                        fontSize: '20',
                         display: true,
                         labelString: 'Berufserfahrung in Jahren'
-                    }
+                    },
+                    scaleFontStyle: 'normal'
                 }],
                 yAxes: [{
                     display: false
@@ -760,8 +784,8 @@ function lineChart() {
                         Chart.helpers.each(meta.data.forEach(function (bar, index) {
                             bar._model.backgroundColor = bar._hover ? '#0A7D7B' : (bar._active ? '#0A7D7B' : '#9A9B9F');
                             ctx.fillStyle = '#eeeeeb';
-                            ctx.font = "2.5vmin Quicksand";
-                            ctx.fillText(dataset.data[index] + ' %', bar._model.x, (chartInstance.height + bar._model.y) * 0.5 - 20);
+                            ctx.font = "2.8vmin Quicksand";
+                            ctx.fillText(dataset.data[index] + ' \uFE6A  ', bar._model.x, (chartInstance.height + bar._model.y) * 0.5 - 20);
                         }),this);
                     }),this);
                 }
